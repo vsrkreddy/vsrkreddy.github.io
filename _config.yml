@@ -2,7 +2,7 @@
 title: Willian Justen - Desenvolvedor Front End
 description: A blog about lorem ipsum dolor sit amet
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://willianjusten.com.br" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+url: "https://sanjaypatel2525.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: Lorem Ipsum
@@ -40,3 +40,6 @@ links:
 
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
+
+plugins:
+  - jekyll-admin
