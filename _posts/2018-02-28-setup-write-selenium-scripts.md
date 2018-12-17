@@ -9,6 +9,7 @@ password: ''
 status: publish
 categories: []
 tags: []
+cardImage: img_5a95bf47bbe8c.png
 meta:
   _edit_last: '1'
   _oembed_20dd7606376650949e781dc71441d972: "{{unknown}}"

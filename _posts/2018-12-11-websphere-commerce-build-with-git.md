@@ -5,6 +5,7 @@ date: '2018-12-11 21:16:05 -0500'
 type: post
 published: true
 status: publish
+cardImage: Untitled-2.jpg
 categories:
 - Websphere Commerce
 meta:

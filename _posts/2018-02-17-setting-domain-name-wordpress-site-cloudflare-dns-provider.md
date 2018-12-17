@@ -9,6 +9,7 @@ password: ''
 status: publish
 categories: []
 tags: []
+cardImage: Capture-1024x457.jpg
 meta:
   _edit_last: '1'
   _wp_page_template: default

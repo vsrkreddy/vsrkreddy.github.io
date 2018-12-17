@@ -9,6 +9,7 @@ password: ''
 status: publish
 categories: []
 tags: []
+cardImage: untitle3.jpeg
 meta:
   _edit_last: '1'
   _thumbnail_id: '179'

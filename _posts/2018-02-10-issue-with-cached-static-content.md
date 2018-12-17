@@ -10,6 +10,7 @@ status: publish
 categories:
 - Websphere Commerce
 tags: []
+cardImage: Untitled-5.jpg
 meta:
   _edit_last: '1'
   _yoast_wpseo_primary_category: '3'
