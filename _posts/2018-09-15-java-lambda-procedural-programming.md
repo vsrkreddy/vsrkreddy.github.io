@@ -9,6 +9,9 @@ password: ''
 status: publish
 categories: []
 tags: []
+redirect_from:
+  - /2018/09/15/java-lambda-procedural-programming/
+  - /2018/09/15/java-lambda-procedural-programming/amp/
 meta:
   _edit_last: '1'
   _wp_page_template: default

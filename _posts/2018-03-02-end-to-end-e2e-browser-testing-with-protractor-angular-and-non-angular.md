@@ -9,6 +9,9 @@ password: ''
 status: publish
 categories: []
 tags: []
+redirect_from:
+  - /2018/03/02/end-to-end-e2e-browser-testing-with-protractor-angular-and-non-angular/
+  - /2018/03/02/end-to-end-e2e-browser-testing-with-protractor-angular-and-non-angular/amp/
 cardImage: untitle2.jpeg
 meta:
   _edit_last: '1'

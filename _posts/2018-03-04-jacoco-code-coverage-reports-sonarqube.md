@@ -9,6 +9,9 @@ password: ''
 status: publish
 categories: []
 tags: []
+redirect_from:
+  - /2018/03/04/jacoco-code-coverage-reports-sonarqube/
+  - /2018/03/04/jacoco-code-coverage-reports-sonarqube/amp/
 cardImage: untitle-2.jpeg
 meta:
   _edit_last: '1'

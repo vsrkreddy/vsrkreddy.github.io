@@ -9,6 +9,9 @@ password: ''
 status: publish
 categories: []
 tags: []
+redirect_from:
+  - /2018/02/16/setup-wordpress-blogging-google-cloud/
+  - /2018/02/16/setup-wordpress-blogging-google-cloud/amp/
 cardImage: Untitled4.jpg
 meta:
   _edit_last: '1'

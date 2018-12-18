@@ -47,3 +47,7 @@ exclude: ['package.json', 'src', 'node_modules']
 
 plugins:
   - jekyll-admin
+  - amp-jekyll
+  - jekyll-redirect-from
+
+ampdir: /amp

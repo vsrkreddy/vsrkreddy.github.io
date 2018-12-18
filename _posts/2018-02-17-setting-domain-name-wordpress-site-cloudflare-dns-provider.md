@@ -9,6 +9,9 @@ password: ''
 status: publish
 categories: []
 tags: []
+redirect_from:
+  - /2018/02/17/setting-domain-name-wordpress-site-cloudflare-dns-provider/
+  - /2018/02/17/setting-domain-name-wordpress-site-cloudflare-dns-provider/amp/
 cardImage: Capture-1024x457.jpg
 meta:
   _edit_last: '1'

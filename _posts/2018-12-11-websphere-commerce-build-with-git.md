@@ -6,6 +6,9 @@ type: post
 published: true
 status: publish
 cardImage: Untitled-2.jpg
+redirect_from:
+  - /2018/12/11/websphere-commerce-build-with-git/
+  - /2018/12/11/websphere-commerce-build-with-git/amp/
 categories:
 - Websphere Commerce
 meta:

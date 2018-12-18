@@ -7,6 +7,9 @@ parent_id: '0'
 published: true
 password: ''
 status: publish
+redirect_from:
+  - /2018/09/23/understanding-java-predicate-interface/
+  - /2018/09/23/understanding-java-predicate-interface/amp/
 categories: []
 tags: []
 meta:

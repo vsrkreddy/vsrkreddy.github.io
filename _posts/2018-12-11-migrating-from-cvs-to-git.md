@@ -9,6 +9,9 @@ password: ''
 status: publish
 categories: []
 tags: []
+redirect_from:
+  - /2018/12/11/migrating-from-cvs-to-git/
+  - /2018/12/11/migrating-from-cvs-to-git/amp/
 cardImage: Untitled.jpg
 meta:
   _edit_last: '1'

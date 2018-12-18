@@ -10,6 +10,9 @@ status: publish
 categories:
 - Websphere Commerce
 tags: []
+redirect_from:
+  - /2018/02/10/issue-with-cached-static-content/
+  - /2018/02/10/issue-with-cached-static-content/amp/
 cardImage: Untitled-5.jpg
 meta:
   _edit_last: '1'

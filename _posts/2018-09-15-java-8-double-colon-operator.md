@@ -7,6 +7,9 @@ parent_id: '0'
 published: true
 password: ''
 status: publish
+redirect_from:
+  - /2018/09/15/java-8-double-colon-operator/
+  - /2018/09/15/java-8-double-colon-operator/amp/
 categories:
 - Java
 tags:

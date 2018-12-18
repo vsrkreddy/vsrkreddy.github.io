@@ -9,6 +9,9 @@ password: ''
 status: publish
 categories: []
 tags: []
+redirect_from:
+  - /2018/02/17/fine-tune-wordpress-google-f1-micro/
+  - /2018/02/17/fine-tune-wordpress-google-f1-micro/amp/
 cardImage: Untitled-4.jpg
 meta:
   _edit_last: '1'
@@ -39,7 +42,7 @@ Here are the main things which we are going to focus on.
 3. Enabling CDN for your website.
 
 # Enabling Caching On Your WordPress Website - WP Super Cache
-<img class="irc_mi" src="{{ site.baseurl }}/assets/banner-772x250.png?rev=1082414" alt="Image result for wp super cache" width="772" height="264" />
+<img class="irc_mi" src="{{ site.baseurl }}/assets/banner-772x250.png" alt="Image result for wp super cache" width="772" height="264" />
 &nbsp;
 ### 1. Login to your WordPress admin panel
 ### 2. Go to Plugins from left navigation click Add New button.
@@ -59,7 +62,7 @@ This is it your default caching is on. So what we have achieved here is, We remo
 That's all, your site is all cached
 
 # Enabling AMP pages for mobile support - Accelerated Mobile Pages
-<img class="transparent" src="{{ site.baseurl }}/assets/banner-772x250.png?rev=1776918" alt="https://ps.w.org/accelerated-mobile-pages/assets/banner-772x250.png?rev=1776918" />
+<img class="transparent" src="{{ site.baseurl }}/assets/banner-772x250.png" alt="https://ps.w.org/accelerated-mobile-pages/assets/banner-772x250.png" />
 &nbsp;
 This is a very important feature which all site should have, It optimizes your WordPress page or Post to for mobile devices. The HTML is trimmed and optimized in such a way that it feels like the site is loaded in no time.
 Google SEO recommends to have AMP pages enabled for your site and this helps your page in terms of SEO and chances of your site to come on top result increases.

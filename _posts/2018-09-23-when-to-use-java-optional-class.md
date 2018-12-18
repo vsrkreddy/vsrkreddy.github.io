@@ -7,6 +7,9 @@ parent_id: '0'
 published: true
 password: ''
 status: publish
+redirect_from:
+  - /2018/09/23/when-to-use-java-optional-class/
+  - /2018/09/23/when-to-use-java-optional-class/amp/
 categories:
 - Java
 tags:

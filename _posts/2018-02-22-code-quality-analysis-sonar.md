@@ -9,6 +9,9 @@ password: ''
 status: publish
 categories: []
 tags: []
+redirect_from:
+  - /2018/02/22/code-quality-analysis-sonar/
+  - /2018/02/22/code-quality-analysis-sonar/amp/
 cardImage: untitle3.jpeg
 meta:
   _edit_last: '1'

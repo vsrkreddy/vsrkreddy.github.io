@@ -9,6 +9,9 @@ password: ''
 status: publish
 categories: []
 tags: []
+redirect_from:
+  - /2018/02/28/setup-write-selenium-scripts/
+  - /2018/02/28/setup-write-selenium-scripts/amp/
 cardImage: img_5a95bf47bbe8c.png
 meta:
   _edit_last: '1'
