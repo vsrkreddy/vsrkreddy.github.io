@@ -1,86 +1,121 @@
 ---
-layout: page
-title: "Sort  Distinct"
-permalink: /p/index.html
-image: '/assets/img/series.png'
-description: "Take a look at my series about lorem ipsum..."
+title: "Sort & Distinct"
+permalink: /sort-distinct/index.html
 ---
-<p><script type="text/javascript"><br />
-function csort(s,order){<br />
-  var temp = new Array();<br />
-  temp = s.split('\n');<br />
-  if(order==1){<br />
-    temp.sort();<br />
-    }<br />
-  else{<br />
-    temp.sort(function (a, b) {<br />
-    if (a > b) {<br />
-        return -1;<br />
-    }<br />
-    if (b > a) {<br />
-        return 1;<br />
-    }<br />
-    return 0;<br />
-    }<br />
-    );<br />
-  }<br />
-  var result = "";<br />
-  var i;<br />
-  for(i=0; i<temp.length; i++) {<br />
-      result += temp[i] + "\n";<br />
-  }<br />
-  return result;<br />
-}<br />
-function onlyUnique(value, index, self) {<br />
-    return self.indexOf(value) === index;<br />
-}<br />
-function fdistinct(s){<br />
- var temp = new Array();<br />
-  temp = s.split('\n');<br />
-  var unique = temp.filter( onlyUnique );<br />
-  var result = "";<br />
-  var i;<br />
-  for(i=0; i<unique.length; i++) {<br />
-      result += unique[i] + "\n";<br />
-  }<br />
-  return result;<br />
-}</p>
-<p>function getLineNumber(textarea, indicator) {</p>
-<p>        indicator.innerHTML = textarea.value.substr(0, textarea.selectionStart).split("\n").length;<br />
-    }</p>
-<p>jQuery(document).ready(function() {</p>
-<p>jQuery("#sortUp").click(function(){<br />
-    jQuery('#contentBox').val(csort(jQuery('#contentBox').val(),1));<br />
-}); </p>
-<p>jQuery("#sortDown").click(function(){<br />
-    jQuery('#contentBox').val(csort(jQuery('#contentBox').val(),0));<br />
-}); </p>
-<p>jQuery("#findDistinct").click(function(){<br />
-    jQuery('#contentBox').val(fdistinct(jQuery('#contentBox').val()));<br />
-}); </p>
-<p>jQuery("#allUp").click(function(){<br />
-    jQuery('#contentBox').val(jQuery('#contentBox').val().toUpperCase());<br />
-}); </p>
-<p>jQuery("#allDown").click(function(){<br />
-    jQuery('#contentBox').val(jQuery('#contentBox').val().toLowerCase());<br />
-}); </p>
-<p>jQuery("#contentBox").keyup(function(){<br />
-    getLineNumber(this, document.getElementById('lineNo'))<br />
-}); </p>
-<p>jQuery("#contentBox").mouseup(function(){<br />
-    getLineNumber(this, document.getElementById('lineNo'))<br />
-}); </p>
-<p>});<br />
-</script></p>
-<div style="width: 800px; margin: 0 auto;"><textarea id="contentBox" rows="20"></textarea>
-<div id="lineNo" style="float: right;"></div>
-<p><button id="sortUp">Sort lines ↑</button> <button id="sortDown">Sort lines ↓</button> <button id="findDistinct">Find distinct</button> <button id="allUp">Upper Case</button> <button id="allDown">Lower Case</button></p>
-<h3 style="width: 800px; margin: 0 auto;">What you can do with tool?</h3>
-<ol>
-<li>Sort the line in alphabetical order.</li>
-<li>Sort the line in alphabetical order descending order.</li>
-<li>Find unique distinct in the lines.</li>
-<li>Change case to all upper case.</li>
-<li>Change case to all lower case.</li>
-</ol>
-</div>
+<!DOCTYPE html> 
+<html lang="en" itemscope itemtype="http://schema.org/BlogPosting" {% if page.main-class %}class="post-{{ page.main-class }}"{% endif %}>
+    {% include head.html %}
+    <script type="text/javascript" src="https://abyte.stream/wp-content/uploads/2018/02/vkbeautify.0.99.00.beta_.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function csort(s,order){
+          var temp = new Array();
+          temp = s.split('\n');
+          if(order==1){
+            temp.sort();
+            }
+          else{
+            temp.sort(function (a, b) {
+            if (a > b) {
+                return -1;
+            }
+            if (b > a) {
+                return 1;
+            }
+            return 0;
+            }
+            );
+          }
+          var result = "";
+          var i;
+          for(i=0; i<temp.length; i++) {
+              result += temp[i] + "\n";
+          }
+          return result;
+        }
+        function onlyUnique(value, index, self) { 
+            return self.indexOf(value) === index;
+        }
+        function fdistinct(s){
+         var temp = new Array();
+          temp = s.split('\n');
+          var unique = temp.filter( onlyUnique );
+          var result = "";
+          var i;
+          for(i=0; i<unique.length; i++) {
+              result += unique[i] + "\n";
+          }
+          return result;
+        }
+        
+        
+        function getLineNumber(textarea, indicator) {
+        
+                indicator.innerHTML = textarea.value.substr(0, textarea.selectionStart).split("\n").length;
+            }
+        
+        jQuery(document).ready(function() {
+        
+        jQuery("#sortUp").click(function(){
+            jQuery('#contentBox').val(csort(jQuery('#contentBox').val(),1));
+        }); 
+        
+        jQuery("#sortDown").click(function(){
+            jQuery('#contentBox').val(csort(jQuery('#contentBox').val(),0));
+        }); 
+        
+        jQuery("#findDistinct").click(function(){
+            jQuery('#contentBox').val(fdistinct(jQuery('#contentBox').val()));
+        }); 
+        
+        jQuery("#allUp").click(function(){
+            jQuery('#contentBox').val(jQuery('#contentBox').val().toUpperCase());
+        }); 
+        
+        jQuery("#allDown").click(function(){
+            jQuery('#contentBox').val(jQuery('#contentBox').val().toLowerCase());
+        }); 
+        
+        
+        jQuery("#contentBox").keyup(function(){
+            getLineNumber(this, document.getElementById('lineNo'))
+        }); 
+        
+        jQuery("#contentBox").mouseup(function(){
+            getLineNumber(this, document.getElementById('lineNo'))
+        }); 
+        
+        });
+        </script>
+    <body>
+        {% include svg-icons.html %}
+        {% include header-post-no-description.html %}
+        <section class="no-desc-page">
+
+            <article role="article" id="post" class="post-content" itemprop="articleBody">
+              <div class="center-content">
+                <textarea id="contentBox" rows="20" spellcheck="false" style="width: 100%;max-width: 800px;line-height: 24px; font-size: 16px; transition: none 0s ease 0s; background: transparent !important;"></textarea><br />
+                <button id="sortUp">Sort lines ↑</button> 
+                <button id="sortDown">Sort lines ↓</button> 
+                <button id="findDistinct">Find distinct</button> 
+                <button id="allUp">Upper Case</button> 
+                <button id="allDown">Lower Case</button>
+              </div>
+
+              <h3 style="width: 800px; margin: 0 auto;">What you can do with tool?</h3>
+                <ol>
+                <li>Sort the line in alphabetical order.</li>
+                <li>Sort the line in alphabetical order descending order.</li>
+                <li>Find unique distinct in the lines.</li>
+                <li>Change case to all upper case.</li>
+                <li>Change case to all lower case.</li>
+                </ol>
+            </article>
+
+            {% include share.html %}
+          
+            {% include footer.html %}
+            <div id="fb-root"></div>
+        </section>
+    </body>
+</html>

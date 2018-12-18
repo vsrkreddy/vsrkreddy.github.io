@@ -35,10 +35,12 @@ links:
     url: /series
   - title: Tags
     url: /tags
-  - title: About Me
-    url: /about
-  - Minify: Minify1
-    url: /p
+  #- title: About Me
+  #  url: /about
+  - title: Pretty Print
+    url: /pretty-print/
+  - title: Sort & Distinct
+    url: /sort-distinct/
 
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']

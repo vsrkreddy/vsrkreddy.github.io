@@ -1,51 +1,37 @@
 ---
-layout: page
-title: Pretty Print
-date: 2018-02-11 00:45:53.000000000 -05:00
-type: page
-parent_id: '0'
-published: true
-password: ''
-status: publish
-categories: []
-tags: []
-meta:
-  _edit_last: '1'
-  _wp_page_template: template-page-builder.php
-  post_grid_post_settings: a:10:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:88:"http://techys.tk/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:7:"#737272";s:22:"font_awesome_icon_size";s:4:"50px";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";}
-  _yoast_wpseo_content_score: '60'
-  _the_champ_meta: a:1:{s:7:"sharing";s:1:"1";}
-  _yoast_wpseo_focuskw_text_input: Pretty print / beautify / minify JSON XML CSS SQL
-  _yoast_wpseo_focuskw: Pretty print / beautify / minify JSON XML CSS SQL
-  _yoast_wpseo_metadesc: This utility helps to pretty print XML, JSON, CSS and SQL.
-    Pretty XML, Pretty JSON, Pretty CSS, Pretty SQL, Minify XML, Minify JSON, Minify
-    CSS, Minify SQL, Format XML, Format JSON, Format CSS, Format SQL,
-  _yoast_wpseo_linkdex: '32'
-  _yoast_wpseo_metakeywords: Pretty XML, Pretty JSON, Pretty CSS, Pretty SQL, Minify
-    XML, Minify JSON, Minify CSS, Minify SQL, Format XML, Format JSON, Format CSS,
-    Format SQL, Beautify XML, Beautify JSON, Beautify CSS, Beautify SQL,
-  ampforwp-amp-on-off: default
-  ampforwp_custom_content_editor: ''
-  ampforwp_custom_content_editor_checkbox: ''
-author:
-  login: sanjaypatel2525
-  email: sanjaypatel2525@gmail.com
-  display_name: sanjaypatel2525
-  first_name: ''
-  last_name: ''
+title: "Pretty Print"
+permalink: /pretty-print/index.html
+description: "Some description about Lorem Ipsum..."
 ---
-<p><script type="text/javascript" src="http://abyte.stream/wp-content/uploads/2018/02/vkbeautify.0.99.00.beta_.js"></script>	 	 </p>
-<div style="width:800px; margin:0 auto;">
-<p><textarea id="contentBox" rows="20"></textarea>	 	 </p>
-<p><button onclick="jQuery('#contentBox').val(vkbeautify.xml(jQuery('#contentBox').val()));">Pretty XML</button> <button onclick="jQuery('#contentBox').val(vkbeautify.json(jQuery('#contentBox').val(),4));">Pretty JSON</button> <button onclick="jQuery('#contentBox').val(vkbeautify.css(jQuery('#contentBox').val(),' '));">Pretty CSS</button> <button onclick="jQuery('#contentBox').val(vkbeautify.sql(jQuery('#contentBox').val(),' '));">Pretty SQL</button> <button onclick="document.getElementById('contentBox').select();document.execCommand('copy');">Copy</button><br />
-<hr /><button onclick="jQuery('#contentBox').val(vkbeautify.xmlmin(jQuery('#contentBox').val()));">Minify XML</button> <button onclick="jQuery('#contentBox').val(vkbeautify.jsonmin(jQuery('#contentBox').val()));">Minify JSON</button> <button onclick="jQuery('#contentBox').val(vkbeautify.cssmin(jQuery('#contentBox').val()));">Minify CSS</button> <button onclick="jQuery('#contentBox').val(vkbeautify.sqlmin(jQuery('#contentBox').val()));">Minify SQL</button></p>
-<p><span style="float: right;">based on <a href="https://github.com/vkiryukhin/vkBeautify">vkbeautify</a> by <a href="https://github.com/vkiryukhin">vkiryukhin</a>.</span></p>
-<p>Try <a href="http://techys.tk/sort-distinct/">Sort and distinct tool</a>.</p>
-<h3 style="width: 800px; margin: 0 auto;">What you can do with tool?</h3>
-<ol>
-<li>Beautify / Pretty / Format / Minify your XML</li>
-<li>Beautify / Pretty / Format  / Minify your JSON</li>
-<li>Beautify / Pretty / Format / Minify your CSS</li>
-<li>Beautify / Pretty / Format / Minify your SQL</li>
-</ol>
-</div>
+<!DOCTYPE html> 
+<html lang="en" itemscope itemtype="http://schema.org/BlogPosting" {% if page.main-class %}class="post-{{ page.main-class }}"{% endif %}>
+    {% include head.html %}
+    <script type="text/javascript" src="https://abyte.stream/wp-content/uploads/2018/02/vkbeautify.0.99.00.beta_.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <body>
+        {% include svg-icons.html %}
+        {% include header-post-no-description.html %}
+        <section class="no-desc-page">
+
+            <article role="article" id="post" class="post-content" itemprop="articleBody">
+              <div class="center-content">
+                <textarea id="contentBox" rows="20" spellcheck="false" style="width: 100%;max-width: 800px;line-height: 24px; font-size: 16px; transition: none 0s ease 0s; background: transparent !important;"></textarea><br />
+                <button onclick="jQuery('#contentBox').val(vkbeautify.xml(jQuery('#contentBox').val()));">Pretty XML</button> 
+                <button onclick="jQuery('#contentBox').val(vkbeautify.json(jQuery('#contentBox').val(),4));">Pretty JSON</button> 
+                <button onclick="jQuery('#contentBox').val(vkbeautify.css(jQuery('#contentBox').val(),' '));">Pretty CSS</button> 
+                <button onclick="jQuery('#contentBox').val(vkbeautify.sql(jQuery('#contentBox').val(),' '));">Pretty SQL</button> 
+                <button onclick="document.getElementById('contentBox').select();document.execCommand('copy');">Copy</button></p>
+                <button onclick="jQuery('#contentBox').val(vkbeautify.xmlmin(jQuery('#contentBox').val()));">Minify XML</button> 
+                <button onclick="jQuery('#contentBox').val(vkbeautify.jsonmin(jQuery('#contentBox').val()));">Minify JSON</button> 
+                <button onclick="jQuery('#contentBox').val(vkbeautify.cssmin(jQuery('#contentBox').val()));">Minify CSS</button> 
+                <button onclick="jQuery('#contentBox').val(vkbeautify.sqlmin(jQuery('#contentBox').val()));">Minify SQL</button>
+              </div>
+            </article>
+
+            {% include share.html %}
+          
+            {% include footer.html %}
+            <div id="fb-root"></div>
+        </section>
+    </body>
+</html>
