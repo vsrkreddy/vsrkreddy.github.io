@@ -1,0 +1,214 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Java Consumer and Supplier Interfaces</title>
+    <link rel="canonical" href="https://sanjaypatel2525.github.io/java-consumer-and-supplier-interfaces/" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        .header-post {
+        background-color: rgb(0, 95, 151);
+        min-height: 23.25rem;
+        width: 100%;
+        }
+        .header-post .content {
+        width: 95%;
+        text-align: center;
+        padding-top: 8.75rem;
+        padding-right: 0px;
+        padding-bottom: 4.125rem;
+        padding-left: 0px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        max-width: 50rem;
+        }
+        .header-post .date {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1rem;
+        }
+        .header-post h1, .header-post .subtitle, .header-post .date {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        }
+        h1 {
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-right: 0px;
+        margin-bottom: 0.67em;
+        margin-left: 0px;
+        }
+        h1, h2, h3, h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        }
+        .header-post h1 {
+        font-size: 1.875rem;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        text-shadow: rgb(0, 76, 121) 3px 3px;
+        }
+        .header-post .subtitle {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem;
+        }
+        .header-post a, .header-post p {
+        color: rgb(255, 255, 255);
+        text-decoration-line: none;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.125rem;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block;
+        }
+        figure {
+        margin-top: 1em;
+        margin-right: 40px;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        }
+        .highlight {
+        margin-top: 1.25rem;
+        margin-right: 0px;
+        margin-bottom: 1.25rem;
+        margin-left: 0px;
+        }
+        pre {
+        overflow-x: auto;
+        overflow-y: auto;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(34, 34, 34);
+        width: 100%;
+        padding-top: 1.25rem;
+        padding-right: 0px;
+        padding-bottom: 1.25rem;
+        padding-left: 0px;
+        color: rgb(255, 255, 255);
+        margin-top: 1.875rem;
+        margin-right: 0px;
+        margin-bottom: 1.875rem;
+        margin-left: 0px;
+        font-size: 0.875rem;
+        }
+        code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        }
+        pre code {
+        width: auto;
+        max-width: 50rem;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 1.25rem;
+        padding-bottom: 0px;
+        padding-left: 1.25rem;
+        }
+        pre code::after {
+        clear: both;
+        }
+        pre span {
+        line-height: 1.5rem;
+        font-family: Monaco, Consolas, Menlo, monospace;
+        }
+        .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+        color: rgb(117, 113, 94);
+        }
+        .highlight .m, .highlight .n, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .py, .highlight .nv, .highlight .w, .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
+        color: rgb(164, 208, 67);
+        }
+        .highlight .o, .highlight .p {
+        color: rgb(247, 247, 242);
+        }
+        .highlight .ld, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+        color: rgb(230, 219, 116);
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+<header class="header-post" role="banner">
+        <div class="content" style="transform: translateY(0px); opacity: 1;">
+            
+                <time itemprop="datePublished" datetime="2018-09-23 06:32:49 -0400" class="date">2018-09-23 06:32:49 -0400 - sanjaypatel2525</time>
+            
+            <h1 class="post-title" itemprop="name">Java Consumer and Supplier Interfaces</h1>
+            <p itemprop="description" class="subtitle"></p>
+        </div>
+</header>
+<p>In continuation of our discussion on <a href="https://abyte.stream/2018/09/15/java-lambda-functional-programming-part-2/">functional interfaces</a>, Java 8 has provided many single method interfaces. Based on the abstract method’s signature Java has given them different names such as Consumer, Supplier, Function, BiFuction, Predicate etc. In this blog, we are going to discuss on Java Consumer and Supplier Interfaces.</p>
+<h2 id="1-consumer-functionalinterface">1. Consumer functional interface.</h2>
+<p>Consumer functional interface is an interface having only one abstract method that accepts a single parameter and returns nothing. Here is how the interface looks like.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Consumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">);</span>
+    <span class="o">...</span>
+<span class="o">}</span></code></pre></figure>
+<p>Here is an example of how Consumer interface can be used.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">());</span><span class="err"> </span> 
+<span class="n">c</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="s">"TestinG"</span><span class="o">);</span> <span class="c1">//Prints testing</span></code></pre></figure>
+<h3 id="11-consumer-functionalinterface-chaining">1.1 Consumer functional interface chaining</h3>
+<p>One value can be passed to multiple consumers one after one. Here is an example.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">c1</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">());</span>
+<span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">c2</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+
+<span class="n">c1</span><span class="o">.</span><span class="na">andThen</span><span class="o">(</span><span class="n">c2</span><span class="o">).</span><span class="na">accept</span><span class="o">(</span><span class="s">"testing"</span><span class="o">);</span> <span class="c1">// prints "TESTING" and then "7"</span></code></pre></figure>
+<h3 id="12-primitive-consumer-types">1.2 Primitive consumer types</h3>
+<p>Here are some primitive supplier types.</p>
+<ul>
+<li>IntConsumer - Function takes one argument int and returns nothing.</li>
+<li>LongConsumer - Function takes one argument Long and returns nothing.</li>
+<li>DoubleConsumer - Function takes one argument Double and returns nothing.</li>
+</ul>
+<h2 id="3-supplier-functionalinterface">3. Supplier functional interface.</h2>
+<p>Supplier functional interface is an interface having only one abstract method doesn’t take any parameter but returns one value. This interface is used mainly to generate indefinite values in Java and also can be used in place of the factory patterns.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Supplier</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="n">T</span> <span class="nf">get</span><span class="o">();</span>
+<span class="o">}</span></code></pre></figure>
+<p> 
+Here is an example of how Consumer interface can be used.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">random</span> <span class="o">=</span> <span class="nl">Math:</span><span class="o">:</span><span class="n">random</span><span class="o">;</span>
+<span class="n">random</span><span class="o">.</span><span class="na">get</span><span class="o">();</span> <span class="c1">//Prints a random number</span></code></pre></figure>
+<h3 id="31-primitive-supplier-types">3.1 Primitive supplier types</h3>
+<p>Here are some primitive supplier types.</p>
+<ul>
+<li>IntSupplier - Function doesn't take any argument and returns an int.</li>
+<li>LongSupplier - Function doesn't take any argument and returns a Long.</li>
+<li>DoubleSupplier - Function doesn't take any argument and returns a Double.</li>
+<li>BooleanSupplier - Function doesn't take any argument and returns a Boolean</li>
+</ul>
+<h2 id="4-conclusion">4. Conclusion</h2>
+<p>In this blog, we discussed two common type of interface supplier and consumer. Both the function interface are very frequently used in Java 8 Streams API.  We visited a little on primitive types of these interfaces. This is it about Java Consumer and Supplier Interfaces.</p>
+
+
+<footer>
+    <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Java Function Interface is the Java Functional interface</title>
+    <link rel="canonical" href="https://sanjaypatel2525.github.io/java-function-interface-is-the-java-functional-interface/" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        .header-post {
+        background-color: rgb(0, 95, 151);
+        min-height: 23.25rem;
+        width: 100%;
+        }
+        .header-post .content {
+        width: 95%;
+        text-align: center;
+        padding-top: 8.75rem;
+        padding-right: 0px;
+        padding-bottom: 4.125rem;
+        padding-left: 0px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        max-width: 50rem;
+        }
+        .header-post .date {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1rem;
+        }
+        .header-post h1, .header-post .subtitle, .header-post .date {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        }
+        h1 {
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-right: 0px;
+        margin-bottom: 0.67em;
+        margin-left: 0px;
+        }
+        h1, h2, h3, h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        }
+        .header-post h1 {
+        font-size: 1.875rem;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        text-shadow: rgb(0, 76, 121) 3px 3px;
+        }
+        .header-post .subtitle {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem;
+        }
+        .header-post a, .header-post p {
+        color: rgb(255, 255, 255);
+        text-decoration-line: none;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.125rem;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block;
+        }
+        figure {
+        margin-top: 1em;
+        margin-right: 40px;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        }
+        .highlight {
+        margin-top: 1.25rem;
+        margin-right: 0px;
+        margin-bottom: 1.25rem;
+        margin-left: 0px;
+        }
+        pre {
+        overflow-x: auto;
+        overflow-y: auto;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(34, 34, 34);
+        width: 100%;
+        padding-top: 1.25rem;
+        padding-right: 0px;
+        padding-bottom: 1.25rem;
+        padding-left: 0px;
+        color: rgb(255, 255, 255);
+        margin-top: 1.875rem;
+        margin-right: 0px;
+        margin-bottom: 1.875rem;
+        margin-left: 0px;
+        font-size: 0.875rem;
+        }
+        code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        }
+        pre code {
+        width: auto;
+        max-width: 50rem;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 1.25rem;
+        padding-bottom: 0px;
+        padding-left: 1.25rem;
+        }
+        pre code::after {
+        clear: both;
+        }
+        pre span {
+        line-height: 1.5rem;
+        font-family: Monaco, Consolas, Menlo, monospace;
+        }
+        .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+        color: rgb(117, 113, 94);
+        }
+        .highlight .m, .highlight .n, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .py, .highlight .nv, .highlight .w, .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
+        color: rgb(164, 208, 67);
+        }
+        .highlight .o, .highlight .p {
+        color: rgb(247, 247, 242);
+        }
+        .highlight .ld, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+        color: rgb(230, 219, 116);
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+<header class="header-post" role="banner">
+        <div class="content" style="transform: translateY(0px); opacity: 1;">
+            
+                <time itemprop="datePublished" datetime="2018-09-23 03:35:45 -0400" class="date">2018-09-23 03:35:45 -0400 - sanjaypatel2525</time>
+            
+            <h1 class="post-title" itemprop="name">Java Function Interface is the Java Functional interface</h1>
+            <p itemprop="description" class="subtitle"></p>
+        </div>
+</header>
+<p>In this blog, we will be discussing Java functional interfaces and one specific interface Function interface. In the end, we will see, Java Function Interface is the Java Functional interface.</p>
+<h2 id="1-what-is-java-functional-interface">1. What is Java functional Interface?</h2>
+<p>The interface which has only one abstract method is called Java Functional interface. Why they are so important because they are small simple and moreover everywhere in Java 8 Stream API. Java functional interfaces are annotated with @FunctionalInterface. Which enforces the programmer to keep only one method for that interface and throws the compilation error.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@FunctionalInterface</span>
+<span class="kd">interface</span> <span class="nc">Country</span><span class="o">{</span>
+  <span class="n">String</span> <span class="nf">getState</span><span class="o">();</span>
+  <span class="k">default</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="s">"CountryName"</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+<p>The above example a simple example of a functional interface. It surely has two methods but it has only one <strong>abstract method </strong>which doesn’t have any definition. For more functional interface you can read <a href="https://abyte.stream/2018/09/15/java-lambda-procedural-programming/">this blog</a>.</p>
+<h2 id="2-java-function-interface">2. Java Function Interface</h2>
+<p>Java Function Interface is the Java Functional interface. It has only one method and it’s signature restrict the programmer to define the method in that format only. The method accepts a parameter and returns another type of variable.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">R</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="n">R</span> <span class="nf">apply</span><span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">);</span>
+    <span class="o">...</span>
+<span class="o">}</span></code></pre></figure>
+<p>As per the method signature, you can see it takes a variable of type T and returns variable of type R. Below are some examples where it can be used.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">//To find a square you had to create a class and a method. </span>
+<span class="kd">class</span> <span class="nc">Util</span><span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">square</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">){</span>
+    <span class="k">return</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">Util</span><span class="o">.</span><span class="na">square</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span> <span class="c1">// return 25.</span>
+
+<span class="c1">// Using Function interface.</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">square</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">;</span>
+<span class="n">square</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span> <span class="c1">// return 25.</span>
+
+<span class="c1">//Another example</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">strLength</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="c1">// equivalent to String::length</span>
+<span class="n">strLength</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="s">"Sanjay"</span><span class="o">)</span> <span class="c1">// returns 6</span></code></pre></figure>
+<h2 id="3-chaining-functioninterface">3. Chaining Function Interface</h2>
+<p>Function interface provides two methods two chain it to another Function interface. Depending on the method it either executes the first Function interface before or after the provided Function interface</p>
+<h3 id="31-executing-another-function-interface-before-current">3.1 Executing another Function Interface before current.</h3>
+<p>This method chains the  Function interface and executes the parameter Function interface before the caller Function.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"> <span class="s">"1,"</span><span class="o">+</span><span class="n">s</span><span class="o">;</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">appendTwo</span><span class="o">=</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="s">"2, "</span><span class="o">+</span><span class="n">s</span><span class="o">;</span>
+
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">finalString</span> <span class="o">=</span> <span class="n">appendOne</span><span class="o">.</span><span class="na">compose</span><span class="o">(</span><span class="n">appendTwo</span><span class="o">);</span>
+<span class="n">finalString</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="s">"3"</span><span class="o">);</span> <span class="c1">// print 1,2,3</span></code></pre></figure>
+<h3 id="32-executing-another-function-interface-after-current">3.2 Executing another Function Interface after current.</h3>
+<p>This method chains the  Function interface and executes the parameter Function interface before the caller Function.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"> <span class="s">"1,"</span><span class="o">+</span><span class="n">s</span><span class="o">;</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">appendTwo</span><span class="o">=</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="s">"2, "</span><span class="o">+</span><span class="n">s</span><span class="o">;</span>
+
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">finalString</span> <span class="o">=</span> <span class="n">appendOne</span><span class="o">.</span><span class="na">andThen</span><span class="o">(</span><span class="n">appendTwo</span><span class="o">);</span>
+<span class="n">finalString</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="s">"3"</span><span class="o">);</span> <span class="c1">// print 2,1,3,</span></code></pre></figure>
+<h2 id="4java-function-interface-is-the-java-functional-interface">4. Java Function Interface is the Java Functional interface</h2>
+<p>By now you must have figured out Function Interface is actually an interface which is annotated by @funcationInterface and has an only single method to do small function based logic.</p>
+<h2 id="5-conclusion">5. Conclusion</h2>
+<p>In this blog, we have discussed the Java function interface and what is are funcational interfaces. Also, how Function interface can be chained easily.
+ </p>
+
+
+<footer>
+    <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

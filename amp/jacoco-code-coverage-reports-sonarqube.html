@@ -1,0 +1,259 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JaCoCo Code Coverage And Reports With Sonarqube</title>
+    <link rel="canonical" href="https://sanjaypatel2525.github.io/jacoco-code-coverage-reports-sonarqube/" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        .header-post {
+        background-color: rgb(0, 95, 151);
+        min-height: 23.25rem;
+        width: 100%;
+        }
+        .header-post .content {
+        width: 95%;
+        text-align: center;
+        padding-top: 8.75rem;
+        padding-right: 0px;
+        padding-bottom: 4.125rem;
+        padding-left: 0px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        max-width: 50rem;
+        }
+        .header-post .date {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1rem;
+        }
+        .header-post h1, .header-post .subtitle, .header-post .date {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        }
+        h1 {
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-right: 0px;
+        margin-bottom: 0.67em;
+        margin-left: 0px;
+        }
+        h1, h2, h3, h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        }
+        .header-post h1 {
+        font-size: 1.875rem;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        text-shadow: rgb(0, 76, 121) 3px 3px;
+        }
+        .header-post .subtitle {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem;
+        }
+        .header-post a, .header-post p {
+        color: rgb(255, 255, 255);
+        text-decoration-line: none;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.125rem;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block;
+        }
+        figure {
+        margin-top: 1em;
+        margin-right: 40px;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        }
+        .highlight {
+        margin-top: 1.25rem;
+        margin-right: 0px;
+        margin-bottom: 1.25rem;
+        margin-left: 0px;
+        }
+        pre {
+        overflow-x: auto;
+        overflow-y: auto;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(34, 34, 34);
+        width: 100%;
+        padding-top: 1.25rem;
+        padding-right: 0px;
+        padding-bottom: 1.25rem;
+        padding-left: 0px;
+        color: rgb(255, 255, 255);
+        margin-top: 1.875rem;
+        margin-right: 0px;
+        margin-bottom: 1.875rem;
+        margin-left: 0px;
+        font-size: 0.875rem;
+        }
+        code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        }
+        pre code {
+        width: auto;
+        max-width: 50rem;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 1.25rem;
+        padding-bottom: 0px;
+        padding-left: 1.25rem;
+        }
+        pre code::after {
+        clear: both;
+        }
+        pre span {
+        line-height: 1.5rem;
+        font-family: Monaco, Consolas, Menlo, monospace;
+        }
+        .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+        color: rgb(117, 113, 94);
+        }
+        .highlight .m, .highlight .n, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .py, .highlight .nv, .highlight .w, .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
+        color: rgb(164, 208, 67);
+        }
+        .highlight .o, .highlight .p {
+        color: rgb(247, 247, 242);
+        }
+        .highlight .ld, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+        color: rgb(230, 219, 116);
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+<header class="header-post" role="banner">
+        <div class="content" style="transform: translateY(0px); opacity: 1;">
+            
+                <time itemprop="datePublished" datetime="2018-03-04 03:06:05 -0500" class="date">2018-03-04 03:06:05 -0500 - sanjaypatel2525</time>
+            
+            <h1 class="post-title" itemprop="name">JaCoCo Code Coverage And Reports With Sonarqube</h1>
+            <p itemprop="description" class="subtitle"></p>
+        </div>
+</header>
+<p>We have already covered how to do <a href="http://abyte.stream/2018/02/22/code-quality-analysis-sonar/">code quality check with Sonarqube</a> in my previous blog. In this blog, we will be discussing how can we setup JaCoCo a code coverage tool and exports reports to SonarQube. Though report can be directly read but having reported at a single place is a good idea. So, let get into  ‘JaCoCo Code Coverage And Reports With Sonarqube’</p>
+<h2 id="what-this-blog-will-cover">What this blog will cover.</h2>
+
+<p>What is JaCoCo and why you need this?
+Setting up JaCoCo.
+Importing reports to SonarQube</p>
+
+<h2 id="what-is-jacoco-and-why-you-need-this">What is JaCoCo and why you need this?</h2>
+<p><amp-img class="alignnone size-full wp-image-274 " src="/assets/img_5a9b6290e8d26.png" alt="" width="455" height="309" layout="responsive"><noscript><img class="alignnone size-full wp-image-274 " src="/assets/img_5a9b6290e8d26.png" alt="" width="455" height="309"></noscript></amp-img>
+JaCoCo is an abbreviation for Java Code Coverage.  It’s free to open source library developed by EclEmma. This tool helps us in finding out the piece of code which is not used at all while running the system, It can be manual or by some sort automatic test. When we are working in the team and we have many minds handling the same project there can cases somebody has written a code which doesn’t execute at all in runtime or worst is not covered by unit test. Attaching JaCoCo to your unit test make sure you haven’t missed out any unwanted untested code. It gives you how many times your code got executed.</p>
+<h2 id="setting-up-jacoco">Setting up JaCoCo.</h2>
+<p>There are multiple ways of running JaCoCo for your project, You can pick any of them depending on your need. Don’t worry, in the end, all will generate same data which we can use in Sonarqube.  We are going to export the generated data in *.exec format. There are other formats as well like HTML, zip XML and CSV.</p>
+
+<ul>
+  <li>Install it on Eclipse.</li>
+  <li>Install using maven.</li>
+  <li>Install standalone JaCoCo java agent on any running java process or server.</li>
+</ul>
+
+<h2 id="install-it-on-eclipse">Install it on Eclipse.</h2>
+<p>This is the easiest approach and best suited when you are developing your code and running unit test cases on the local system.
+Steps to install it on eclipse.</p>
+
+<h3 id="click-or-drag-below-link-in-your-eclipse">Click or drag below link in your eclipse.</h3>
+<p><a title="Drag to your running Eclipse workspace to install EclEmma Java Code Coverage" href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=264">
+<amp-img style="vertical-align: text-bottom; border: 0px solid black;" src="/assets/btn-install.png" alt="Drag to your running Eclipse workspace to install EclEmma Java Code Coverage" width="87" height="34" layout="responsive"><noscript><img style="vertical-align: text-bottom; border: 0px solid black;" src="/assets/btn-install.png" alt="Drag to your running Eclipse workspace to install EclEmma Java Code Coverage" width="87" height="34"></noscript></amp-img>
+</a></p>
+
+<h3 id="install-from-update-sites">Install from update sites.</h3>
+<p>Go to Help-&gt; Install new software and put in below URL.
+http://update.eclemma.org<amp-img class="alignnone size-full wp-image-269" src="/assets/img_5a9b149e3295e.png" alt="" width="545" height="502" layout="responsive"><noscript><img class="alignnone size-full wp-image-269" src="/assets/img_5a9b149e3295e.png" alt="" width="545" height="502"></noscript></amp-img></p>
+
+<h3 id="download-plugin-zip-and-install-manually">Download plugin zip and install manually.</h3>
+<p><a href="http://www.eclemma.org/download.html" rel="nofollow">http://www.eclemma.org/download.html</a></p>
+
+<h2 id="install-using-maven">Install using maven.</h2>
+<p><amp-img class="alignnone size-full wp-image-273 " src="/assets/img_5a9b625756041.png" alt="" width="992" height="262" layout="responsive"><noscript><img class="alignnone size-full wp-image-273 " src="/assets/img_5a9b625756041.png" alt="" width="992" height="262"></noscript></amp-img>
+If you are already using maven with your project and want to generate reports using simple maven commands then you can go with this installation.
+Steps to install JaCoCo and run reports.</p>
+
+<h3 id="open-up-your-pomxml-and-add-following-lines">Open up your pom.xml and add following lines.</h3>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;groupId&gt;</span>org.jacoco<span class="nt">&lt;/groupId&gt;</span>
+ <span class="nt">&lt;artifactId&gt;</span>jacoco-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+ <span class="nt">&lt;version&gt;</span>0.8.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+
+
+ <span class="nt">&lt;reporting&gt;</span>
+ 
+ 
+ <span class="nt">&lt;groupId&gt;</span>org.jacoco<span class="nt">&lt;/groupId&gt;</span>
+ <span class="nt">&lt;artifactId&gt;</span>jacoco-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+ <span class="nt">&lt;reportSets&gt;</span>
+ <span class="nt">&lt;reportSet&gt;</span>
+ <span class="nt">&lt;reports&gt;</span>
+ <span class="nt">&lt;report&gt;</span>report<span class="nt">&lt;/report&gt;</span>
+ <span class="nt">&lt;/reports&gt;</span>
+ <span class="nt">&lt;/reportSet&gt;</span>
+ <span class="nt">&lt;/reportSets&gt;</span>
+ <span class="nt">&lt;/plugin&gt;</span>
+ <span class="nt">&lt;/plugins&gt;</span>
+ <span class="nt">&lt;/reporting&gt;</span>
+<span class="nt">&lt;/project&gt;</span></code></pre></figure>
+
+<h3 id="run-the-maven-goals-to-generate-reports">Run the maven goals to generate reports.</h3>
+<p>For more options visit.
+mvn jacoco:report
+For more options visit.
+<a href="http://www.eclemma.org/jacoco/trunk/doc/maven.html" rel="nofollow noopener">http://www.eclemma.org/jacoco/trunk/doc/maven.html</a></p>
+
+<h3 id="install-standalone-jacoco-java-agent-on-any-running-java-process-or-server">Install standalone JaCoCo java agent on any running java process or server.</h3>
+<p>This suite best when you do want to run JaCoCo on your live or test environments directly. Also in case, you do not have test setups or local workspace setup. There is standalone JaCoCo jar which you can directly plugin in your remote Java process using command line arguments. Once the java agent is attached to your server process you can open up a port to fetch reports or you can directly go to your server and ask for report dump. This report dump can be in any format CSV, XML, *.exec, HTML or zip. In order to use it with Sonarqube, we have export the report in *.exec format.</p>
+
+<p>Here are the commands you to attach JaCoCo to a running Java process.
+-javaagent:C:\dev\servers\jacoco-agent.jar=destfile=&lt; path to jacoco C:\lib&gt;jacoco.exec,append=true,includes=some.application.*</p>
+
+<p>This Java argument will attach the JaCoCo agent. Once you have enabled the JaCoCo agent you need to run tests manually or automated. This will create jacoco.exec on given location but dump data only on server stop. To avoid server interruption for the report you need to enable command interface using following option.
+output=<tcpserver>,address=*,<em>port=&lt;some port 6300&gt;</em></tcpserver></p>
+<h2 id="importing-reports-to-sonarqube">Importing reports to SonarQube</h2>
+<figure class="highlight"><pre><code class="language-properties" data-lang="properties"><span class="c"># Generate sonar issues report in html and console
+</span><span class="py">sonar.issuesReport.html.enable</span><span class="p">=</span><span class="s">true</span>
+<span class="py">sonar.issuesReport.console.enable</span><span class="p">=</span><span class="s">true</span>
+
+<span class="c"># This name depends on the configuration in pom.xml. In this example we have ${project.build.directory}/coverage-reports/jacoco-ut.exec entry in our pom.xml
+</span><span class="py">sonar.java.coveragePlugin</span><span class="p">=</span><span class="s">jacoco</span>
+<span class="py">sonar.jacoco.reportPath</span><span class="p">=</span><span class="s">D:/jacocoreport/jacoco.exec</span>
+<span class="py">sonar.dynamicAnalysis</span><span class="p">=</span><span class="s">reuseReports</span>
+<span class="py">sonar.jacoco.reportMissing.force.zero</span><span class="p">=</span><span class="s">true</span></code></pre></figure>
+<p>I ran it on one of my old projects. It looks something like this and it looks like this. For further detail, you can click on coverage percentage.<amp-img class="alignnone size-full wp-image-270" src="/assets/img_5a9b5a7882daa.png" alt="" width="1295" height="779" layout="responsive"><noscript><img class="alignnone size-full wp-image-270" src="/assets/img_5a9b5a7882daa.png" alt="" width="1295" height="779"></noscript></amp-img></p>
+
+
+<footer>
+    <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

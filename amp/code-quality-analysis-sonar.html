@@ -1,0 +1,231 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Code Quality analysis with Sonar</title>
+    <link rel="canonical" href="https://sanjaypatel2525.github.io/code-quality-analysis-sonar/" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        .header-post {
+        background-color: rgb(0, 95, 151);
+        min-height: 23.25rem;
+        width: 100%;
+        }
+        .header-post .content {
+        width: 95%;
+        text-align: center;
+        padding-top: 8.75rem;
+        padding-right: 0px;
+        padding-bottom: 4.125rem;
+        padding-left: 0px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        max-width: 50rem;
+        }
+        .header-post .date {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1rem;
+        }
+        .header-post h1, .header-post .subtitle, .header-post .date {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        }
+        h1 {
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-right: 0px;
+        margin-bottom: 0.67em;
+        margin-left: 0px;
+        }
+        h1, h2, h3, h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        }
+        .header-post h1 {
+        font-size: 1.875rem;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        text-shadow: rgb(0, 76, 121) 3px 3px;
+        }
+        .header-post .subtitle {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem;
+        }
+        .header-post a, .header-post p {
+        color: rgb(255, 255, 255);
+        text-decoration-line: none;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.125rem;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block;
+        }
+        figure {
+        margin-top: 1em;
+        margin-right: 40px;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        }
+        .highlight {
+        margin-top: 1.25rem;
+        margin-right: 0px;
+        margin-bottom: 1.25rem;
+        margin-left: 0px;
+        }
+        pre {
+        overflow-x: auto;
+        overflow-y: auto;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(34, 34, 34);
+        width: 100%;
+        padding-top: 1.25rem;
+        padding-right: 0px;
+        padding-bottom: 1.25rem;
+        padding-left: 0px;
+        color: rgb(255, 255, 255);
+        margin-top: 1.875rem;
+        margin-right: 0px;
+        margin-bottom: 1.875rem;
+        margin-left: 0px;
+        font-size: 0.875rem;
+        }
+        code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        }
+        pre code {
+        width: auto;
+        max-width: 50rem;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 1.25rem;
+        padding-bottom: 0px;
+        padding-left: 1.25rem;
+        }
+        pre code::after {
+        clear: both;
+        }
+        pre span {
+        line-height: 1.5rem;
+        font-family: Monaco, Consolas, Menlo, monospace;
+        }
+        .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+        color: rgb(117, 113, 94);
+        }
+        .highlight .m, .highlight .n, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .py, .highlight .nv, .highlight .w, .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
+        color: rgb(164, 208, 67);
+        }
+        .highlight .o, .highlight .p {
+        color: rgb(247, 247, 242);
+        }
+        .highlight .ld, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+        color: rgb(230, 219, 116);
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+<header class="header-post" role="banner">
+        <div class="content" style="transform: translateY(0px); opacity: 1;">
+            
+                <time itemprop="datePublished" datetime="2018-02-22 19:16:58 -0500" class="date">2018-02-22 19:16:58 -0500 - sanjaypatel2525</time>
+            
+            <h1 class="post-title" itemprop="name">Code Quality analysis with Sonar</h1>
+            <p itemprop="description" class="subtitle"></p>
+        </div>
+</header>
+<p>Every software starts with a good documentation and good code. Whenever a team starts a project are there different minds working on the same thing and sometimes this leads to differences in coding standards. To overcome this problem there are many standalone tools, which can go through your code and depending on configured rules in that tool. It gives lines of code which under coding rules violation.</p>
+
+<p>There are many code quality tools in java such as,</p>
+
+<ul>
+  <li>CheckStyle</li>
+  <li>Firebugs</li>
+  <li>PMD</li>
+</ul>
+
+<p>Actually, sonar is the combination of all these, That’s the reason I prefer Sonar over the individual tool. Moreover, it has code coverage plugin as well Cobertura which is quite decent.</p>
+<h1>Steps to install Sonar and Sonar-Scanner.</h1>
+
+<h3 id="install-required-version-of-jre">Install required version of JRE.</h3>
+<p>https://docs.sonarqube.org/display/SONAR/Requirements</p>
+
+<h3 id="download-latest-sonar-form-following-link">Download latest Sonar form following link.</h3>
+<p>https://www.sonarqube.org/downloads/</p>
+
+<h3 id="read-licensing-and-stuff-completely-optional-the-current-version-is-licensed-under-lgpl-v3-">Read licensing and stuff (Completely optional, The current version is licensed under LGPL v3 )</h3>
+<p>https://softwareengineering.stackexchange.com/questions/47323/can-i-use-an-lgpl-licenced-library-in-my-commercial-app</p>
+
+<h3 id="install-sonar-scanner-its-a-replacement-for-sonar-runner-if-you-are-using-maven-and-gradle-then-its-not-required">Install Sonar Scanner (It’s a replacement for Sonar runner). If you are using maven and  gradle then it’s not required.</h3>
+<p>https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner</p>
+
+<h3 id="extract-both-the-zips-on-one-location-as-shown-below">Extract both the zips on one location as shown below.</h3>
+<p><amp-img class="alignnone size-full wp-image-176" src="/assets/img_5a8efabed2852.png" alt="" width="584" height="46" layout="responsive"><noscript><img class="alignnone size-full wp-image-176" src="/assets/img_5a8efabed2852.png" alt="" width="584" height="46"></noscript></amp-img></p>
+
+<h3 id="let-sonar-scanner-know-sonarqube-url-optional-if-you-havent-updated-the-port-or-url">Let Sonar-scanner know  Sonarqube URL (Optional, If you haven’t updated the port or URL).</h3>
+<p>sonar-scanner\conf\sonar-scanner.properties –&gt; Update the sonar.host.url
+Add Sonar-scanner\bin path to your system and verify by running sonar-scanner.bat -h in the console.</p>
+
+<h3 id="spin-up-the-sonarqube-server-by-running-startsonarbat-from-sonarqube-bin-directory-and-verify-if-it-has-come-properly-or-not-by-going-to-the-browser">Spin up the Sonarqube server by running StartSonar.bat from Sonarqube bin directory and verify if it has come properly or not by going to the browser.</h3>
+<p>localhost:9000
+click tutorial and make a note of the generated key.</p>
+
+<h3 id="create-sonar-projectproperties-in-the-root-of-the-project-which-you-want-to-scan">Create sonar-project.properties in the root of the project which you want to scan.</h3>
+<p><b>sonar-project.properties</b></p>
+<figure class="highlight"><pre><code class="language-properties" data-lang="properties"><span class="c"># must be unique in a given SonarQube instance
+</span><span class="py">sonar.projectKey</span><span class="p">=</span><span class="s">my:project</span>
+<span class="c"># this is the name and version displayed in the SonarQube UI. Was mandatory prior to SonarQube 6.1.
+</span><span class="py">sonar.projectName</span><span class="p">=</span><span class="s">My project</span>
+<span class="py">sonar.projectVersion</span><span class="p">=</span><span class="s">1.0</span>
+<span class="c"># Path is relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
+# This property is optional if sonar.modules is set. 
+</span><span class="py">sonar.sources</span><span class="p">=</span><span class="s">.</span>
+<span class="c"># Encoding of the source code. Default is default system encoding
+</span><span class="err">#</span><span class="py">sonar.sourceEncoding</span><span class="p">=</span><span class="s">UTF-8</span></code></pre></figure>
+
+<h3 id="run-solar-scanner-command-from-the-root-of-your-project">Run solar-scanner command from the root of your project.</h3>
+
+<h3 id="in-case-you-are-not-using-maven-or-gradle-you-might-face-the-following-issue">In case you are not using maven or gradle you might face the following issue.</h3>
+<p><amp-img class="alignnone size-full wp-image-177" src="/assets/img_5a8f039d217de.png" alt="" width="1028" height="75" layout="responsive"><noscript><img class="alignnone size-full wp-image-177" src="/assets/img_5a8f039d217de.png" alt="" width="1028" height="75"></noscript></amp-img>
+Just add a follwoing line in sonar-project.properties.</p>
+
+<p>sonar.java.binaries=&lt;replace with your binaries path. bin***.class&gt; #path of your class files.</p>
+
+<h3 id="once-you-get-execution-success-revisit-your-localhost9000">Once you get ‘Execution Success’. Revisit your localhost:9000.</h3>
+<p><amp-img class="alignnone size-full wp-image-181 " src="/assets/img_5a8f182662166.png" alt="" width="1213" height="483" layout="responsive"><noscript><img class="alignnone size-full wp-image-181 " src="/assets/img_5a8f182662166.png" alt="" width="1213" height="483"></noscript></amp-img></p>
+
+<p>That’s setup is complete, You can browse through the site and find out the easy.</p>
+
+
+<footer>
+    <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

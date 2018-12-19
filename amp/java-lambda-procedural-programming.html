@@ -1,0 +1,222 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Java lambda and functional programming - Part 1</title>
+    <link rel="canonical" href="https://sanjaypatel2525.github.io/java-lambda-procedural-programming/" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        .header-post {
+        background-color: rgb(0, 95, 151);
+        min-height: 23.25rem;
+        width: 100%;
+        }
+        .header-post .content {
+        width: 95%;
+        text-align: center;
+        padding-top: 8.75rem;
+        padding-right: 0px;
+        padding-bottom: 4.125rem;
+        padding-left: 0px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        max-width: 50rem;
+        }
+        .header-post .date {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1rem;
+        }
+        .header-post h1, .header-post .subtitle, .header-post .date {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        }
+        h1 {
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-right: 0px;
+        margin-bottom: 0.67em;
+        margin-left: 0px;
+        }
+        h1, h2, h3, h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        }
+        .header-post h1 {
+        font-size: 1.875rem;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        text-shadow: rgb(0, 76, 121) 3px 3px;
+        }
+        .header-post .subtitle {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem;
+        }
+        .header-post a, .header-post p {
+        color: rgb(255, 255, 255);
+        text-decoration-line: none;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.125rem;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block;
+        }
+        figure {
+        margin-top: 1em;
+        margin-right: 40px;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        }
+        .highlight {
+        margin-top: 1.25rem;
+        margin-right: 0px;
+        margin-bottom: 1.25rem;
+        margin-left: 0px;
+        }
+        pre {
+        overflow-x: auto;
+        overflow-y: auto;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(34, 34, 34);
+        width: 100%;
+        padding-top: 1.25rem;
+        padding-right: 0px;
+        padding-bottom: 1.25rem;
+        padding-left: 0px;
+        color: rgb(255, 255, 255);
+        margin-top: 1.875rem;
+        margin-right: 0px;
+        margin-bottom: 1.875rem;
+        margin-left: 0px;
+        font-size: 0.875rem;
+        }
+        code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        }
+        pre code {
+        width: auto;
+        max-width: 50rem;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 1.25rem;
+        padding-bottom: 0px;
+        padding-left: 1.25rem;
+        }
+        pre code::after {
+        clear: both;
+        }
+        pre span {
+        line-height: 1.5rem;
+        font-family: Monaco, Consolas, Menlo, monospace;
+        }
+        .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+        color: rgb(117, 113, 94);
+        }
+        .highlight .m, .highlight .n, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .py, .highlight .nv, .highlight .w, .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
+        color: rgb(164, 208, 67);
+        }
+        .highlight .o, .highlight .p {
+        color: rgb(247, 247, 242);
+        }
+        .highlight .ld, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+        color: rgb(230, 219, 116);
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+<header class="header-post" role="banner">
+        <div class="content" style="transform: translateY(0px); opacity: 1;">
+            
+                <time itemprop="datePublished" datetime="2018-09-15 23:26:33 -0400" class="date">2018-09-15 23:26:33 -0400 - sanjaypatel2525</time>
+            
+            <h1 class="post-title" itemprop="name">Java lambda and functional programming - Part 1</h1>
+            <p itemprop="description" class="subtitle"></p>
+        </div>
+</header>
+<p>Seeing the history of Java we can easily say, Java had troubles adapting functional programming. Recently Oracle has made some efforts to bring functional programming pattern to Java. In this blog we are going to discuss about Java  lambda and functional programming.</p>
+<h2 id="what-is-functional-programming">What is functional programming?</h2>
+<p>Functional programming focused mainly on three points while function creation pure functions, avoid sharing state and immutable variables.<br>
+In Java world methods were part of the class and they used to use instance state (object properties) and modify them. But pure function concept says method return should solely be based on method argument and it shouldn’t share state. Immutable variables are never changed in whole function call they create a copy of the value, such as primitive types. Perks of functional programming function can be passed as an argument and returned same as the objects.
+For example</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Utility</span><span class="o">{</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">5</span><span class="o">;</span>
+
+   <span class="c1">//Pure function, It does not use instance variables</span>
+   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">sumToInt</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">){</span>
+       <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span>
+   <span class="o">}</span>
+
+   <span class="c1">//Not a pure function</span>
+   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">sumWithInstance</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">){</span>
+       <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">i</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+<h2 id="how-java-hasadded-functional-programming">How Java has added functional programming</h2>
+<p>To support functional programming Java had to support methods without a class. As you might be aware to create a method in Java we always needed a class but functional programming requires the function to be independent of class.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Utilty</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">addInt</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">){</span>
+        <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">Utilty</span> <span class="n">utilty</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Utilty</span><span class="o">();</span>
+<span class="n">utilty</span><span class="o">.</span><span class="na">addInt</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span></code></pre></figure>
+<p>Here just to add two integers we had to create a class and to access methods you need to create class object and access. But as you can see this function is a pure function, it doesn’t use object state and return the values based on input variables. For this Java 8 introduced function interfaces.</p>
+<h2 id="java-8-lambda-and-functional-programming">Java 8 lambda and functional programming</h2>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">AddInt</span><span class="o">{</span>  <span class="c1">//Line1</span>
+    <span class="kt">int</span> <span class="nf">addInt</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="n">AddInt</span> <span class="n">addFunc</span> <span class="o">=</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span> <span class="o">}</span> <span class="c1">//Line 2</span>
+<span class="c1">//or</span>
+<span class="n">AddInt</span><span class="err"> </span><span class="n">addFunc</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span> <span class="c1">//Line 2</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">addFunc</span><span class="o">.</span><span class="na">addInt</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">));</span> <span class="c1">// prints 3</span></code></pre></figure>
+<p>Let’s forget about the interface, what just happened with line 2. You must have seen in Javascript something like this.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">//Javascript</span>
+<span class="kt">var</span> <span class="n">addFunc</span> <span class="o">=</span> <span class="n">function</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">){</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">//or</span>
+<span class="kt">var</span> <span class="n">addFunc</span> <span class="o">=</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span><span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;}</span>
+<span class="c1">//or since the functions body is one liner</span>
+<span class="kt">var</span> <span class="n">addFunc</span> <span class="o">=</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span>
+
+<span class="n">console</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">addFunc</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">))</span> <span class="c1">// prints 3</span></code></pre></figure>
+<p>In javascript, we save function definition in a variable and call it later same even Java 8 provides the way to achieve it. The only issue remains Java doesn’t have a ‘var’ keyword so it usage interface/abstract class with only 1 abstract method. The whole interface/class is created only for that function.
+This was a quick introduction on the functional interface and harness full power of these interfaces we have lambda way coding.  Please check<a href="https://abyte.stream/2018/09/15/java-lambda-functional-programming-part-2/"> part 2</a> of this blog.</p>
+
+
+<footer>
+    <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
