@@ -1,139 +1,75 @@
 [
   
     {
-      "title"    : "Websphere Commerce build with Git",
+      "title"    : "Spring Dependency Injection",
       "tags"     : "",
       "categories"     : "",
-      "url"      : "/websphere-commerce-build-with-git/",
-      "date"     : "11 Dec 2018"
+      "url"      : "/spring-dependency-injection/",
+      "date"     : "20 Nov 2018"
     } ,
   
     {
-      "title"    : "Migrating from CVS to Git.",
+      "title"    : "Eclipse and Maven Overview",
       "tags"     : "",
       "categories"     : "",
-      "url"      : "/migrating-from-cvs-to-git/",
-      "date"     : "11 Dec 2018"
+      "url"      : "/eclipse-and-maven-overview/",
+      "date"     : "20 Nov 2018"
     } ,
   
     {
-      "title"    : "Java Consumer and Supplier Interfaces",
-      "tags"     : "Java and Java8",
-      "categories"     : "",
-      "url"      : "/java-consumer-and-supplier-interfaces/",
-      "date"     : "23 Sep 2018"
-    } ,
-  
-    {
-      "title"    : "Java Function Interface is the Java Functional interface",
-      "tags"     : "Java and Java8",
-      "categories"     : "",
-      "url"      : "/java-function-interface-is-the-java-functional-interface/",
-      "date"     : "23 Sep 2018"
-    } ,
-  
-    {
-      "title"    : "Understanding Java Predicate Interface",
+      "title"    : "JPA Concepts",
       "tags"     : "",
       "categories"     : "",
-      "url"      : "/understanding-java-predicate-interface/",
-      "date"     : "23 Sep 2018"
+      "url"      : "/data-jpa-concepts/",
+      "date"     : "19 Nov 2018"
     } ,
   
     {
-      "title"    : "When to use Java Optional Class",
-      "tags"     : "Java and Java8",
-      "categories"     : "",
-      "url"      : "/when-to-use-java-optional-class/",
-      "date"     : "23 Sep 2018"
-    } ,
-  
-    {
-      "title"    : "Java lambda and functional programming - Part 1",
+      "title"    : "RESTful Web Services SpringBoot",
       "tags"     : "",
       "categories"     : "",
-      "url"      : "/java-lambda-procedural-programming/",
-      "date"     : "15 Sep 2018"
+      "url"      : "/restful-web-services-springboot/",
+      "date"     : "19 Nov 2018"
     } ,
   
     {
-      "title"    : "Java lambda and functional programming - Part 2",
-      "tags"     : "Java, Java8, and Lambda",
-      "categories"     : "",
-      "url"      : "/java-lambda-functional-programming-part-2/",
-      "date"     : "15 Sep 2018"
-    } ,
-  
-    {
-      "title"    : "Java 8 double colon operator",
-      "tags"     : "Java, Java8, and Lambda",
-      "categories"     : "",
-      "url"      : "/java-8-double-colon-operator/",
-      "date"     : "15 Sep 2018"
-    } ,
-  
-    {
-      "title"    : "JaCoCo Code Coverage And Reports With Sonarqube",
+      "title"    : "Eclipse Debugging Tips",
       "tags"     : "",
       "categories"     : "",
-      "url"      : "/jacoco-code-coverage-reports-sonarqube/",
-      "date"     : "04 Mar 2018"
+      "url"      : "/eclipse-debugging-tips/",
+      "date"     : "18 Nov 2018"
     } ,
   
     {
-      "title"    : "E2E Browser Testing with Protractor",
+      "title"    : "SOAP WS with Spring boot",
       "tags"     : "",
       "categories"     : "",
-      "url"      : "/end-to-end-e2e-browser-testing-with-protractor-angular-and-non-angular/",
-      "date"     : "02 Mar 2018"
+      "url"      : "/soap-ws-with-spring-boot/",
+      "date"     : "18 Nov 2018"
     } ,
   
     {
-      "title"    : "Setup And Write Selenium Scripts.",
+      "title"    : "Any Starter has dependency on &quot;spring-boot&quot;",
       "tags"     : "",
       "categories"     : "",
-      "url"      : "/setup-write-selenium-scripts/",
-      "date"     : "28 Feb 2018"
+      "url"      : "/any-starter-has-dependency-on-spring-boot/",
+      "date"     : "18 Nov 2018"
     } ,
   
     {
-      "title"    : "Code Quality analysis with Sonar",
+      "title"    : "WebServices",
       "tags"     : "",
       "categories"     : "",
-      "url"      : "/code-quality-analysis-sonar/",
-      "date"     : "22 Feb 2018"
+      "url"      : "/webservices/",
+      "date"     : "18 Nov 2018"
     } ,
   
     {
-      "title"    : "Fine-tune WordPress for Google F1 Micro",
+      "title"    : "Spring Boot - Quick Overview",
       "tags"     : "",
       "categories"     : "",
-      "url"      : "/fine-tune-wordpress-google-f1-micro/",
-      "date"     : "17 Feb 2018"
-    } ,
-  
-    {
-      "title"    : "Setting Up Domain Name For Your WordPress Site and Cloudflare As DNS Provider",
-      "tags"     : "",
-      "categories"     : "",
-      "url"      : "/setting-domain-name-wordpress-site-cloudflare-dns-provider/",
-      "date"     : "17 Feb 2018"
-    } ,
-  
-    {
-      "title"    : "How to Setup Your WordPress Blogging on Google Cloud",
-      "tags"     : "",
-      "categories"     : "",
-      "url"      : "/setup-wordpress-blogging-google-cloud/",
-      "date"     : "16 Feb 2018"
-    } ,
-  
-    {
-      "title"    : "Issue With Cached Static Content - Cache Buster",
-      "tags"     : "",
-      "categories"     : "",
-      "url"      : "/issue-with-cached-static-content/",
-      "date"     : "10 Feb 2018"
+      "url"      : "/springboot_quickstart/",
+      "date"     : "11 Oct 2018"
     } 
   
 ]
