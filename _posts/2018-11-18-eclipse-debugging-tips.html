@@ -1,0 +1,68 @@
+---
+layout: post
+title: Eclipse Debugging Tips
+date: 2018-11-18 06:41:51.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  post_grid_post_settings: a:10:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:91:"http://35.229.62.76/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:7:"#737272";s:22:"font_awesome_icon_size";s:4:"50px";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";}
+author:
+  login: velma
+  email: shivaram.velma777@gmail.com
+  display_name: velma
+  first_name: ''
+  last_name: ''
+---
+<p><strong>Run Java program in debug mode </strong></p>
+<p>What is <strong>Debugging</strong> -to find and fix bugs in software</p>
+<p><strong>breakpoint</strong> - a pausing point in a program, put in place to find and fix the bug. (double click on margin line where you want to put break-point, to remove double click on break-point ).</p>
+<p>We will have <strong>breakpoint</strong> view and <strong>variable</strong> view ( windows&gt;show view)</p>
+<h1><strong>"IMPORTANT COMMANDS"</strong></h1>
+<ol>
+<li style="text-align: left;">
+<blockquote><p><strong>Resume</strong> - F8 (GO HEAD pause at next breakpoint if any).</p></blockquote>
+</li>
+<li style="text-align: left;">
+<blockquote><p><strong>Terminate</strong> - Cntrl + F2 or stop button.</p></blockquote>
+</li>
+<li style="text-align: left;">
+<blockquote><p><strong>Step Over</strong> - F6 ( if breakpoint is at line 11, when you run the java application in debug mode it is paused at line 11. So when you press F6 line 11 is executed and the control is given to next line ie; line 12).</p></blockquote>
+</li>
+<li style="text-align: left;">
+<blockquote><p><strong>Step Into</strong> - F5 (go into Method Invocation).</p>
+<pre>step into selection - if we have like 
+Util.Method().getSomeMethod().get(0); 
+and if we press f5 we will go to Method(), 
+what if we want to go to get(0) so select get(0) and 
+press Cntrl+F5.</pre>
+</blockquote>
+</li>
+<li style="text-align: left;">
+<blockquote><p><strong>Step Return</strong> - F7 (now i went inside a method invocation and want to come back to the place i was use step return which does opposite of Step Into).</p></blockquote>
+<p><em>"you can skill all breakpoints, remove all breakpoints in the options from breakpoint view".</em></p>
+<blockquote><p><strong>"HELPFUL COMMANDS"</strong></p>
+<p><strong>Run into Line</strong> - go to that line without placing breakpoint ( Cntrl + R).</p>
+<p><strong>Inspect</strong> - Cntrl + Shift + I - inspect the values.</p>
+<p><strong>Execute</strong> - executes the selected expression ( Cntrl + U)</p>
+<p><strong>Watch</strong> - using watch we can create custom expressions and evaluate( if we have i and j we can see i+j, i-j, i*j, etc)</p>
+<p><strong>Show Logical Structures button</strong> -useful while debugging collection objects.</p>
+<p>"We can also changing Variable values during debugging".</p>
+<p><strong>Display View</strong> - see what code is doing. copy the code and put it in display view and execute.</p>
+<pre>if there s like Util.listMethod().getsubMethod().get(0); 
+and you want the size of listMethod() then use display view; 
+copy Util.listMethod().size() and execute.</pre>
+<p><strong>Detail Formatter</strong> - if we get the value in hexa; if we want it to be more readable. right click and select detail formatter.</p>
+<p><strong>Conditional Breakpoint</strong> - hit the break point if the value is something also hitcount is useful in cases of iteration.</p>
+<p><strong>Exception Breakpoint</strong> - if there is exception pause the program ( in breakpoint view options)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></blockquote>
+</li>
+</ol>
+<p>&nbsp;</p>

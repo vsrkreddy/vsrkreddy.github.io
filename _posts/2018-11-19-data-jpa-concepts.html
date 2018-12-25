@@ -1,0 +1,36 @@
+---
+layout: post
+title: JPA Concepts
+date: 2018-11-19 21:28:50.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  post_grid_post_settings: a:10:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:91:"http://35.229.62.76/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:7:"#737272";s:22:"font_awesome_icon_size";s:4:"50px";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";}
+author:
+  login: velma
+  email: shivaram.velma777@gmail.com
+  display_name: velma
+  first_name: ''
+  last_name: ''
+---
+<p><strong>JPA - Java Persistance API.</strong> we want to take java objects data and store it in DB (tables).</p>
+<p>JPA provides a way of mapping from POJO to the database tables. we can use SQL statements/ Criteria API, JPQL to query the database.</p>
+<p><strong>Important Annotations</strong> - @Entity, @Table(name = "tablename"), @Id @GenerateValue, @Column, @OneToOne, @OneToMany, @ManyToMany.</p>
+<p><strong>Useful Notes:</strong></p>
+<ol>
+<li><strong>JPA</strong> is an interface/specification<strong> - Hibernate(ORM tool) is an implementation of interface.</strong></li>
+<li><strong>EntityManager</strong> is used to manage all the Entities. The EntityManager API is used to access a database in a particular unit of work. <strong>It is used to create and remove persistent entity instances</strong>, to find entities by their primary key identity, and to query over all entities.</li>
+<li>There are many useful methods that we can make use of in EntityManger like persist etc.. More info <a href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html" target="_blank" rel="noopener">click here..</a></li>
+<li>Transaction management can be managed by @Transactional can be used on class level or method level.</li>
+<li>add spring.jpa.show-sql= true, spring.h2.console.enabled=true</li>
+<li>url for h2 - http://localhost:8080/h2-console, use db url jdbc:h2:mem:testdb.</li>
+<li>Lets look whats happening in background - springboot auto configration is doing all the work. as we are using in memory database h2. spring boot initializes the schema. HibernateJpaAutoConfiguration , DataSourceAutoConfiguration, EntityManager, TransactionManager is auto configured.</li>
+</ol>
+<p>SPRING DATA JPA provides JpaRespository&lt;EntityClassName, Long&gt; and lot of important methods.</p>

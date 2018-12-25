@@ -1,0 +1,66 @@
+---
+layout: post
+title: WebServices
+date: 2018-11-18 03:31:54.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  post_grid_post_settings: a:10:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:91:"http://35.229.62.76/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:7:"#737272";s:22:"font_awesome_icon_size";s:4:"50px";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";}
+author:
+  login: velma
+  email: shivaram.velma777@gmail.com
+  display_name: velma
+  first_name: ''
+  last_name: ''
+---
+<p><strong>W3C </strong><b>DEFINITION</b> - s/w system designed to support inter operable machine to machine interaction over a network.</p>
+<p>Three things for it to be a web service.</p>
+<p>1. Application to application communication.</p>
+<p><span style="font-size: 1rem;">2. Communication over network.</span></p>
+<p>3. Should be inter operable -  irrespective of tech stack.</p>
+<p><strong>How Data exchange takes place between applications?</strong></p>
+<p>Request (give me name of the person with id =1) and Response( Take the person Details).  Request and response format should also be supported by the applications(platform independent), popular formats are XML and Json.</p>
+<p><strong>Service Definition</strong> is where application will know the request/response format. Request structure, Response Structure, Endpoint.</p>
+<p><strong>Some Key Terminology in web services</strong></p>
+<ol>
+<li style="text-align: left;">Request - Input to a web service.</li>
+<li style="text-align: left;">Response - Output of a web service.</li>
+<li style="text-align: left;">Message Format - communication language (XML/JSON).</li>
+<li style="text-align: left;">Service Provider - One which hosts web service.</li>
+<li style="text-align: left;">Service Consumer - One which uses the service.</li>
+<li style="text-align: left;">Service Definition  - Contract between Provider and Consumer (format, request, response, endpoint).</li>
+<li style="text-align: left;">Transport - How is service exposed - HTTP(over web)/ MQ(service requester will put request on queue, service provider will listen on queue processes request and gives response).</li>
+</ol>
+<p><strong>DIFFERENT KINDS OF WEB SERVICES</strong></p>
+<ol>
+<li><strong>SOAP</strong>
+<ol>
+<li>Format - XML</li>
+<li>SOAP defines structure ( Header and Body)</li>
+<li>Transport - MQ / HTTP</li>
+<li>Service Definition - WSDL ( endpoint, all operations, request structure, response structure.)</li>
+</ol>
+</li>
+<li><strong>RESTFUL</strong>
+<ol>
+<li>Representational State Transfer</li>
+<li>Format - multiple (XML, JSON).</li>
+<li>Rest Structure - Headers, Body, <strong>Request Methods ( GET, POST), </strong>Status Codes (200, 404).</li>
+<li>Transport - only HTTP.</li>
+<li>Service Definition - <strong><em>Swagger</em></strong>.</li>
+<li><strong>Resource</strong> has an URI ( /login, /page/number1).</li>
+<li><strong>Richardson Maturity Model</strong> tell how RESTful are you. Detailed explanation <a href="https://martinfowler.com/articles/richardsonMaturityModel.html" target="_blank" rel="noopener">click here..</a></li>
+<li><strong>Best Practices</strong> - nouns for resources, have clear idea of what they want, think from consumer perspective, have a good documentation like swagger, make best use of http provides.</li>
+</ol>
+</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

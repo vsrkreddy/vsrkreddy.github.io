@@ -1,0 +1,68 @@
+---
+layout: post
+title: Eclipse and Maven Overview
+date: 2018-11-20 00:44:07.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  post_grid_post_settings: a:10:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:91:"http://35.229.62.76/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:7:"#737272";s:22:"font_awesome_icon_size";s:4:"50px";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";}
+author:
+  login: velma
+  email: shivaram.velma777@gmail.com
+  display_name: velma
+  first_name: ''
+  last_name: ''
+---
+<h1><strong>Eclipse Keyboard Shortcut</strong></h1>
+<ol>
+<li><strong>Import a class - cntrl + space</strong> (gives suggestion of available classes if multiple/ predefined template).</li>
+<li><strong>Suggest Name - cntrl + 1</strong> ( gives you suggestions for names).</li>
+<li><strong>Search - Cntrl + H</strong> ( file searches, java search , git search, can use wildcards using *).</li>
+<li><strong>Organise imports - Cntrl + Shift + O</strong> ( imports all necessary packages/class)</li>
+<li><strong>Search Resources - Cntrl + Shift + R/T</strong> ( search for resources like classes)</li>
+<li><strong>F3 - open declaration</strong> ( opens the code of the class/method)</li>
+<li><strong>F4 - Type HIerarchy</strong> (for example see what Hashmap inherits ).</li>
+<li><strong>Opens all shortcuts - Cntrl + Shift + L</strong></li>
+<li><strong>Alt + arrowmark</strong> - move between windows in eclipse.</li>
+<li><strong>Shift + Arrows</strong> - Selecting faster (Home , End).</li>
+<li><strong>Cntrl + Shift + F</strong> - Formatting the code.</li>
+<li><strong>Cntl + D</strong> - delete that particular line.</li>
+<li><strong>Cntrl + O</strong> - Quick Outline.</li>
+<li><strong>Cntrl + Shift + G</strong> - method invocations</li>
+</ol>
+<h1><strong>Maven </strong></h1>
+<ol>
+<li><strong>POM</strong> - project object model, contains all the configurations for the particular project.</li>
+<li>SNAPSHOT - indicates the project under development.</li>
+<li>Maven gets the transitive dependencies also.</li>
+<li>To build a jar i need to compile and run ( for java and test code) but maven makes this process easy.</li>
+<li><strong>Maven Build Life cycle</strong> -
+<ul>
+<li>Validate - Validates the project</li>
+<li>Compile - compiles source code, compile test code</li>
+<li>Test - runs the unit code.</li>
+<li>Package - if tests are successful its builds a jar</li>
+<li>Verify</li>
+<li>Install - take the project and put in local repo.</li>
+<li>Deploy - take project and put it in remote maven repo.</li>
+</ul>
+</li>
+<li><strong>Commands</strong> - go to the project folder
+<ul>
+<li><strong>mvn clean install</strong> ( this command would execute all til install, clean deletes the jar from target folder).</li>
+<li><strong>mvn clean compile</strong> ( mvn clean test-compile)</li>
+<li><strong>mvn help-effective-settings</strong> - gives you all settings used by maven are printed.</li>
+<li><strong>help:effective-pom</strong> -&gt; entire content of the POM's including super pom is printed. (we can see all versions start to end).</li>
+<li><strong>depedency:tree</strong> - gives you dependency tree.</li>
+<li><strong>depedency:sources</strong> - downloads the sources for the dependency if available.</li>
+<li>if you want to debug for maven you can use like <strong>mvn compile - - debug.</strong></li>
+</ul>
+</li>
+</ol>

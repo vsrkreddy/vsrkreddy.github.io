@@ -1,0 +1,54 @@
+---
+layout: post
+title: RESTful Web Services SpringBoot
+date: 2018-11-19 19:59:13.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  post_grid_post_settings: a:10:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:91:"http://35.229.62.76/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:7:"#737272";s:22:"font_awesome_icon_size";s:4:"50px";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";}
+  _wp_old_slug: restful-web-services-springboot-basics-part-1
+author:
+  login: velma
+  email: shivaram.velma777@gmail.com
+  display_name: velma
+  first_name: ''
+  last_name: ''
+---
+<p><strong>Create a RESTful web services using spring boot.</strong></p>
+<ol>
+<li>go to SpringInitilizr to generate a spring boot maven project with following dependencies - web, devtools, jpa, h2, actuator etc.(groupid is like the name of package structure you want , artifact_id is the name of the project you want).</li>
+<li><a href="http://35.229.62.76/wp-content/uploads/2018/11/RestfulServicesProject.zip">ZIP of RestfulServicesProject</a></li>
+<li>Unzip and import in preferred IDE.</li>
+<li>Generally CRUD operations are mostly used. CRUD stands for Create Read Update Delete. Operations are  like create user (POST), retrieve user (GET), update user (PUT), Delete User (DELETE).</li>
+<li>Uri's examples, /users, /users/{id}, /users/posts/1.</li>
+<li>Use annotations like @Controller (/@RestController), @RequestMapping(it will have the method which we are going to use like GET/POST(method = RequestMethod.GET, path = " path of the uri").</li>
+<li>With that your can hit the endpoint from a browser and get the response back.</li>
+<li><strong>Now, Let us take a step back to understand whats happening in the background - Spring framework will have classes, when you pull in the dependencies and run the spring boot application several beans for these classes (DispatcherServlet , <em>ErrorMvcAutoConfigurations</em> etc..) are created by spring boot auto configuration.</strong></li>
+<li>@SpringBootApplication – indicates that this is <strong>spring context</strong> file. <strong>enables ""auto configuration"", enables component scan</strong> (scan this package and sub packages).</li>
+<li><strong>DispatcherServlet</strong> handles all the request, It is also called the front controller.</li>
+<li>DispatcherServlet looks for which controller to send the request to and sends it to that bean. Once it gets response it is mapped to @ResponseBody by <strong>message converter</strong> like jackson which returns the JSON response and then it sends the response back.</li>
+<li>Some of important annotations are @PathVariable, @Service, @Controller, @Respository, @Configuration, @Entity, @RequestMapping, @Autowired etc.</li>
+<li>Implementation of Basic Auth with Spring security - add spring-boot-starter-security dependency. default is user and password you get it in console logs.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>USEFUL TIPS</strong></p>
+<ul>
+<li>ResponseEntity&lt;T&gt; which is extension of httpEntity is useful for returning status code.</li>
+<li>@ResposeStatus(HttpStatus.NOT_Found) on exception class.</li>
+<li>implement generic Exception handling for all resources.</li>
+<li>Can you javax validation API to perform validations for domain class variables.</li>
+<li>Adhere to HATEOAS concepts.</li>
+<li>Add in dependencies which supports both JSON and XML.</li>
+<li><strong>Configure Auto generation of Swagger Documentation</strong>( similar to WSDL in SOAP) - add dependencies like springfox-swagger2, springfox-swagger-ui. write SwaggerConfig class use</li>
+<li>@Configuration, @EnableSwagger2 on class, @Bean public Docket api() { return new Docket(DocumentationType.SWAGGER_2) } then go to localhost:8080/swagger-ui.html</li>
+<li><strong>Monitoring API's</strong> - if your application is down i want to know it as soon as possible. In spring this is provided by spring-boot-starter-actuator. also add dependency of <em>spring-data-rest-hal-browser. Hal browser will show all the hal services which are being exposed by spring-boot-starter-actuator (url for actuator- localhost:8080/actuator)(type local:8080 and put in the service which you want to see the details for).</em></li>
+<li>Use @JsonIgnore to not send the value in the response.</li>
+</ul>
+<p>&nbsp;</p>

@@ -1,0 +1,63 @@
+---
+layout: post
+title: Spring Dependency Injection
+date: 2018-11-20 01:08:18.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  post_grid_post_settings: a:10:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:91:"http://35.229.62.76/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:7:"#737272";s:22:"font_awesome_icon_size";s:4:"50px";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";}
+author:
+  login: velma
+  email: shivaram.velma777@gmail.com
+  display_name: velma
+  first_name: ''
+  last_name: ''
+---
+<p>Where DI comes into play - For example, now in sort algorithm we are using BubbleSort, and if we want to change to QuickSort it can be done with very little code change in spring framework.</p>
+<p><span style="color: #ff0000;">"When you annotate (@Configuration, @Component, @Controller, @RestController etc..)the classes in spring it creates the beans and stored in application context. Using @Autowired, spring injects references of the objects in the class with @Autowired annotation. "</span></p>
+<p>if BubbleSort <strong>implements</strong> Sort, QuickSort <b>implements </b>Sort and we have used</p>
+<pre><span style="color: #333300;">@Autowired</span>
+<span style="color: #ff0000;"><span style="color: #333300;">Sort s;</span> then spring doesn't know which bean to inject
+then use 
+<span style="color: #993300;">(solution 1)</span>
+<span style="color: #ff6600;">Sort s;</span>
+<span style="color: #333300;"><span style="color: #ff6600;">public void methodName(Sort quickSort){ this.s = quickSort;}</span>
+(solution 2) 
+<span style="color: #ff6600;">use <strong>@Primary</strong> on class level.
+</span>(solution 3)
+use @Qualifier annotation.
+
+</span></span></pre>
+<pre>lets say in application.properties file there is 
+<b>app.value.username = "Velma". </b>use<strong> 
+<span style="color: #ff0000;">@Value(${app.value.username}")</span></strong><span style="color: #333333;"> </span>
+<span style="color: #333333;">private String username;</span> 
+<span style="color: #ff0000;"><strong>Spring</strong> will inject</span> the username - Velma into username attribute.</pre>
+<h1><strong>How to Configure Beans</strong> - how to put objects into application context.</h1>
+<p>Using annotations <span style="color: #ff6600;">@Controller, @Service, @Repository, @Configuration, @SpringBootApplication</span> on classes - spring creates objects(beans)  and put in to application context.</p>
+<pre><span style="color: #ff6600;"><strong>"If we don't want to create beans using annotations or 
+<span style="color: #333333;">if we don't have source code to annotate</span> then we should/ can
+ create a configuration class." <span style="color: #333333;">for example</span>
+
+<span style="color: #333333;">@Configuration</span>
+public class RestConfig{
+<span style="color: #333333;">@Bean</span>
+public Sort <span style="color: #333333;">quickSort</span>(){
+return new QuickSort(); - lets say value = 10001
+}
+<span style="color: #333333;">@Bean</span>
+public Sort <span style="color: #333333;">bubbleSort</span>(){
+</strong></span><strong>quicksort(); value is also 10001</strong><span style="color: #ff6600;"><strong>
+return new BubbleSort();
+}
+
+</strong></span><strong>NOTE:</strong><span style="color: #ff6600;"><strong> "Return value of bean in configuration class is cache", 
+where as for others like component it is not cached value is
+different for Component classes.</strong></span></pre>

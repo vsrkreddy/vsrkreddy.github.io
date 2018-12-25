@@ -1,0 +1,56 @@
+---
+layout: post
+title: Any Starter has dependency on "spring-boot"
+date: 2018-11-18 06:02:59.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  post_grid_post_settings: a:10:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:91:"http://35.229.62.76/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:7:"#737272";s:22:"font_awesome_icon_size";s:4:"50px";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";}
+author:
+  login: velma
+  email: shivaram.velma777@gmail.com
+  display_name: velma
+  first_name: ''
+  last_name: ''
+---
+<p>&nbsp;</p>
+<ol>
+<li><strong>spring-boot-starter-web</strong> - preferred for Web Applications and <strong><em>Rest web services</em></strong>.
+<ul>
+<li>contains dependencies - <em>spring-boot-starter-tomcat, spring-web, spring-webmvc, hibernate-validator, spring-boot-starter-json so on..</em></li>
+<li>These dependencies are automatically provided.</li>
+</ul>
+</li>
+<li><strong>spring-boot-starter-test</strong> - testing frameworks
+<ul>
+<li>junit, assertj, Mockito etc..</li>
+</ul>
+</li>
+<li><strong>spring-boot-starter-jpa</strong> - for Databases
+<ul>
+<li>hibernate-core, hibernate-jpa, jpa, orm, etc..</li>
+</ul>
+</li>
+<li><strong>spring-boot-starter-web-services - </strong>SOAP WebServices</li>
+<li><strong>spring-boot-starter-data- rest - </strong>Expose simple REST Services using spring data REST.</li>
+<li><strong>spring-boot-starter-security - </strong>Authentication and Authorization using Spring Security.</li>
+<li><strong>spring-boot-starter-jetty</strong></li>
+<li><strong>spring-boot-starter-log4j2</strong></li>
+<li><strong>spring-boot-starter-actuator</strong>
+<ul>
+<li>brings in lot of monitoring, exposes lot of rest services.(get hal-browser dependency if needed.)</li>
+<li>launch actuator - localhost:8080/actuator</li>
+<li>to get more info from actuator - put this in application.properties</li>
+</ul>
+</li>
+</ol>
+<pre style="text-align: center;">management.endpoint.web.exposure.include=*</pre>
+<p>Also, look at awesome dependency of <strong>spring-boot-devtools</strong></p>
+<p>More info on spring-boot-starters - <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-starter" target="_blank" rel="noopener">Click Here</a></p>

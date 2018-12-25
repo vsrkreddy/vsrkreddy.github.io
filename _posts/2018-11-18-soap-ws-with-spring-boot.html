@@ -1,0 +1,79 @@
+---
+layout: post
+title: SOAP WS with Spring boot
+date: 2018-11-18 06:38:39.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  post_grid_post_settings: a:10:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:91:"http://35.229.62.76/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:7:"#737272";s:22:"font_awesome_icon_size";s:4:"50px";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";}
+author:
+  login: velma
+  email: shivaram.velma777@gmail.com
+  display_name: velma
+  first_name: ''
+  last_name: ''
+---
+<p>Create a sample project using <a href="https://start.spring.io/" target="_blank" rel="noopener">SpringInitializr</a> choose web services, jpa, h2(in memory db) dependencies and generate the project. Unzip it and import it to preferred IDE.</p>
+<p>Spring 'webservices' provides <strong>contract first approach</strong> in developing web services, it means you will define the structure of request and response.</p>
+<ol>
+<li>create a folder and put in the request XML and response XML ( request may contain like get the course with id =1 ,  may have like id, name and details).      &lt;CourseRequest xmlns ="http://examples.com/courses" xsi:schemaLocation = "{namespace} { location(sample)}" xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;id&gt;1&lt;/id&gt;&lt;/CourseRequest&gt; and similar structure for response with id , name and details.</li>
+<li>XSD (XML Schema Definition) should be defined. With XSD we get setup restrictions on the fields of request and response XML's.
+<ul>
+<li>create XML Schema file and save it in the folder created(<strong>sample</strong>.<strong>xsd</strong>).</li>
+<li>put in id can only be integer &lt;element name = "CourseRequest"&gt;&lt;complexType&gt;&lt;sequence&gt;&lt;element name = "id" type = "integer"&gt;&lt;/sequence&gt;&lt;/complexType&gt;&lt;/element&gt;. More info on XSD can be found <a href="http://edutechwiki.unige.ch/en/XML_Schema_tutorial_-_Basics" target="_blank" rel="noopener">here..</a></li>
+</ul>
+</li>
+<li>We should be able to convert the <strong>XSD</strong> (make it available to application) to java objects for this use jaxb2maven plugin.</li>
+<li>
+<pre>&lt;plugin&gt;
+
+            &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+
+            &lt;artifactId&gt;jaxb2-maven-plugin&lt;/artifactId&gt;
+
+            &lt;executions&gt;
+
+                &lt;execution&gt;
+
+                    &lt;goals&gt;
+
+                        &lt;goal&gt;xjc&lt;/goal&gt;
+
+                    &lt;/goals&gt;
+
+                &lt;/execution&gt;
+
+            &lt;/executions&gt;
+
+            &lt;configuration&gt;
+
+                &lt;!-- The schema directory or xsd files. --&gt;
+
+                &lt;schemaDirectory&gt;${basedir}/src/main/resources&lt;/schemaDirectory&gt;
+
+                &lt;!-- The package in which the source files will be generated. --&gt;
+
+                &lt;packageName&gt;com.service.bean.demo&lt;/packageName&gt;
+
+                <b> &lt;clearOutputDir&gt;false&lt;/clearOutputDir&gt;</b>
+
+                &lt;!-- The working directory to create the generated java source files. --&gt;
+
+                &lt;outputDirectory&gt;${basedir}/src/main/java&lt;/outputDirectory&gt;
+
+            &lt;/configuration&gt;
+
+        &lt;/plugin&gt;</pre>
+</li>
+<li>Create Endpoint - will typically have a method which takes in input request and responds back with a response. Use <strong>@Endpoint</strong> on class, <strong>@PayLoadRoot</strong>(namespace= "put xmlns here..", localPart = "name of the request") on method, now to map xml to java object use<strong> @RequestPayLoad</strong> in method args, <strong>@ResponsePayload</strong> on method to convert the response java object to XML.</li>
+<li>Next we need to define URL - that is configuring the endpoint. Generally used name is WebConfig Class, use <strong>@Enablews, @Configuration</strong> on class. Configure Message Dispatcher Servlet which is to identify endpoints.</li>
+<li>Now we need to generate <strong>WSDL</strong>. Web services Description Language is like an interface ie., the structure of the XML messages that the service can accept/return. ( we will need dependency like wsdl4j).</li>
+<li>Now we can use SOAP clients like SOAPUI or Wizdler and test your services.</li>
+</ol>
