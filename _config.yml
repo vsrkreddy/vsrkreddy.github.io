@@ -1,13 +1,13 @@
 # Site settings  
-title: Sanjay Patel - Blogs
+title: Mr Velma - Blogs
 description: A blog about lorem ipsum dolor sit amet
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://sanjaypatel2525.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+url: "https://vsrkreddy.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
-username: Sanjay Patel
-user_description: Developer at IBM
-email: sanjaypatel2525@yahoo.com
+username: Mr Velma
+user_description: java Developer
+email: shivaram.velma777@gmail.com
 twitter_username: 
 github_username:  
 gplus_username:  
@@ -37,11 +37,7 @@ links:
     url: /tags
   #- title: About Me
   #  url: /about
-  - title: Pretty Print
-    url: /pretty-print/
-  - title: Sort & Distinct
-    url: /sort-distinct/
-
+  
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
 
