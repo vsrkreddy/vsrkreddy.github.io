@@ -1,0 +1,239 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Eclipse and Maven Overview</title>
+    <link rel="canonical" href="https://vsrkreddy.github.io/eclipse-and-maven-overview/" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        .header-post {
+        background-color: rgb(0, 95, 151);
+        min-height: 23.25rem;
+        width: 100%;
+        }
+        .header-post .content {
+        width: 95%;
+        text-align: center;
+        padding-top: 8.75rem;
+        padding-right: 0px;
+        padding-bottom: 4.125rem;
+        padding-left: 0px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        max-width: 50rem;
+        }
+        .header-post .date {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1rem;
+        }
+        .header-post h1, .header-post .subtitle, .header-post .date {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        }
+        h1 {
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-right: 0px;
+        margin-bottom: 0.67em;
+        margin-left: 0px;
+        }
+        h1, h2, h3, h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        }
+        .header-post h1 {
+        font-size: 1.875rem;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        text-shadow: rgb(0, 76, 121) 3px 3px;
+        }
+        .header-post .subtitle {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem;
+        }
+        .header-post a, .header-post p {
+        color: rgb(255, 255, 255);
+        text-decoration-line: none;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.125rem;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block;
+        }
+        figure {
+        margin-top: 1em;
+        margin-right: 40px;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        }
+        .highlight {
+        margin-top: 1.25rem;
+        margin-right: 0px;
+        margin-bottom: 1.25rem;
+        margin-left: 0px;
+        }
+        pre {
+        overflow-x: auto;
+        overflow-y: auto;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(34, 34, 34);
+        width: 100%;
+        padding-top: 1.25rem;
+        padding-right: 0px;
+        padding-bottom: 1.25rem;
+        padding-left: 0px;
+        color: rgb(255, 255, 255);
+        margin-top: 1.875rem;
+        margin-right: 0px;
+        margin-bottom: 1.875rem;
+        margin-left: 0px;
+        font-size: 0.875rem;
+        }
+        code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        }
+        pre code {
+        width: auto;
+        max-width: 50rem;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 1.25rem;
+        padding-bottom: 0px;
+        padding-left: 1.25rem;
+        }
+        pre code::after {
+        clear: both;
+        }
+        pre span {
+        line-height: 1.5rem;
+        font-family: Monaco, Consolas, Menlo, monospace;
+        }
+        .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+        color: rgb(117, 113, 94);
+        }
+        .highlight .m, .highlight .n, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .py, .highlight .nv, .highlight .w, .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
+        color: rgb(164, 208, 67);
+        }
+        .highlight .o, .highlight .p {
+        color: rgb(247, 247, 242);
+        }
+        .highlight .ld, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+        color: rgb(230, 219, 116);
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+<header class="header-post" role="banner">
+        <div class="content" style="transform: translateY(0px); opacity: 1;">
+            
+                <time itemprop="datePublished" datetime="2018-11-20 00:44:07 -0500" class="date">2018-11-20 00:44:07 -0500 - velma</time>
+            
+            <h1 class="post-title" itemprop="name">Eclipse and Maven Overview</h1>
+            <p itemprop="description" class="subtitle"></p>
+        </div>
+</header>
+<h1><strong>Eclipse Keyboard Shortcut</strong></h1>
+<ol>
+<li>
+<strong>Import a class - cntrl + space</strong> (gives suggestion of available classes if multiple/ predefined template).</li>
+<li>
+<strong>Suggest Name - cntrl + 1</strong> ( gives you suggestions for names).</li>
+<li>
+<strong>Search - Cntrl + H</strong> ( file searches, java search , git search, can use wildcards using *).</li>
+<li>
+<strong>Organise imports - Cntrl + Shift + O</strong> ( imports all necessary packages/class)</li>
+<li>
+<strong>Search Resources - Cntrl + Shift + R/T</strong> ( search for resources like classes)</li>
+<li>
+<strong>F3 - open declaration</strong> ( opens the code of the class/method)</li>
+<li>
+<strong>F4 - Type HIerarchy</strong> (for example see what Hashmap inherits ).</li>
+<li><strong>Opens all shortcuts - Cntrl + Shift + L</strong></li>
+<li>
+<strong>Alt + arrowmark</strong> - move between windows in eclipse.</li>
+<li>
+<strong>Shift + Arrows</strong> - Selecting faster (Home , End).</li>
+<li>
+<strong>Cntrl + Shift + F</strong> - Formatting the code.</li>
+<li>
+<strong>Cntl + D</strong> - delete that particular line.</li>
+<li>
+<strong>Cntrl + O</strong> - Quick Outline.</li>
+<li>
+<strong>Cntrl + Shift + G</strong> - method invocations</li>
+</ol>
+<h1><strong>Maven </strong></h1>
+<ol>
+<li>
+<strong>POM</strong> - project object model, contains all the configurations for the particular project.</li>
+<li>SNAPSHOT - indicates the project under development.</li>
+<li>Maven gets the transitive dependencies also.</li>
+<li>To build a jar i need to compile and run ( for java and test code) but maven makes this process easy.</li>
+<li>
+<strong>Maven Build Life cycle</strong> -
+<ul>
+<li>Validate - Validates the project</li>
+<li>Compile - compiles source code, compile test code</li>
+<li>Test - runs the unit code.</li>
+<li>Package - if tests are successful its builds a jar</li>
+<li>Verify</li>
+<li>Install - take the project and put in local repo.</li>
+<li>Deploy - take project and put it in remote maven repo.</li>
+</ul>
+</li>
+<li>
+<strong>Commands</strong> - go to the project folder
+<ul>
+<li>
+<strong>mvn clean install</strong> ( this command would execute all til install, clean deletes the jar from target folder).</li>
+<li>
+<strong>mvn clean compile</strong> ( mvn clean test-compile)</li>
+<li>
+<strong>mvn help-effective-settings</strong> - gives you all settings used by maven are printed.</li>
+<li>
+<strong>help:effective-pom</strong> -&gt; entire content of the POM's including super pom is printed. (we can see all versions start to end).</li>
+<li>
+<strong>depedency:tree</strong> - gives you dependency tree.</li>
+<li>
+<strong>depedency:sources</strong> - downloads the sources for the dependency if available.</li>
+<li>if you want to debug for maven you can use like <strong>mvn compile - - debug.</strong>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<footer>
+    <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

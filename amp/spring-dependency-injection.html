@@ -1,0 +1,212 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Spring Dependency Injection</title>
+    <link rel="canonical" href="https://vsrkreddy.github.io/spring-dependency-injection/" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        .header-post {
+        background-color: rgb(0, 95, 151);
+        min-height: 23.25rem;
+        width: 100%;
+        }
+        .header-post .content {
+        width: 95%;
+        text-align: center;
+        padding-top: 8.75rem;
+        padding-right: 0px;
+        padding-bottom: 4.125rem;
+        padding-left: 0px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        max-width: 50rem;
+        }
+        .header-post .date {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1rem;
+        }
+        .header-post h1, .header-post .subtitle, .header-post .date {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        }
+        h1 {
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-right: 0px;
+        margin-bottom: 0.67em;
+        margin-left: 0px;
+        }
+        h1, h2, h3, h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        }
+        .header-post h1 {
+        font-size: 1.875rem;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        text-shadow: rgb(0, 76, 121) 3px 3px;
+        }
+        .header-post .subtitle {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem;
+        }
+        .header-post a, .header-post p {
+        color: rgb(255, 255, 255);
+        text-decoration-line: none;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.125rem;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block;
+        }
+        figure {
+        margin-top: 1em;
+        margin-right: 40px;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        }
+        .highlight {
+        margin-top: 1.25rem;
+        margin-right: 0px;
+        margin-bottom: 1.25rem;
+        margin-left: 0px;
+        }
+        pre {
+        overflow-x: auto;
+        overflow-y: auto;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(34, 34, 34);
+        width: 100%;
+        padding-top: 1.25rem;
+        padding-right: 0px;
+        padding-bottom: 1.25rem;
+        padding-left: 0px;
+        color: rgb(255, 255, 255);
+        margin-top: 1.875rem;
+        margin-right: 0px;
+        margin-bottom: 1.875rem;
+        margin-left: 0px;
+        font-size: 0.875rem;
+        }
+        code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        }
+        pre code {
+        width: auto;
+        max-width: 50rem;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 1.25rem;
+        padding-bottom: 0px;
+        padding-left: 1.25rem;
+        }
+        pre code::after {
+        clear: both;
+        }
+        pre span {
+        line-height: 1.5rem;
+        font-family: Monaco, Consolas, Menlo, monospace;
+        }
+        .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+        color: rgb(117, 113, 94);
+        }
+        .highlight .m, .highlight .n, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .py, .highlight .nv, .highlight .w, .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
+        color: rgb(164, 208, 67);
+        }
+        .highlight .o, .highlight .p {
+        color: rgb(247, 247, 242);
+        }
+        .highlight .ld, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+        color: rgb(230, 219, 116);
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+<header class="header-post" role="banner">
+        <div class="content" style="transform: translateY(0px); opacity: 1;">
+            
+                <time itemprop="datePublished" datetime="2018-11-20 01:08:18 -0500" class="date">2018-11-20 01:08:18 -0500 - velma</time>
+            
+            <h1 class="post-title" itemprop="name">Spring Dependency Injection</h1>
+            <p itemprop="description" class="subtitle"></p>
+        </div>
+</header>
+<p>Where DI comes into play - For example, now in sort algorithm we are using BubbleSort, and if we want to change to QuickSort it can be done with very little code change in spring framework.</p>
+<p><span style="color: #ff0000;">"When you annotate (@Configuration, @Component, @Controller, @RestController etc..)the classes in spring it creates the beans and stored in application context. Using @Autowired, spring injects references of the objects in the class with @Autowired annotation. "</span></p>
+<p>if BubbleSort <strong>implements</strong> Sort, QuickSort <b>implements </b>Sort and we have used</p>
+<pre><span style="color: #333300;">@Autowired</span>
+<span style="color: #ff0000;"><span style="color: #333300;">Sort s;</span> then spring doesn't know which bean to inject
+then use 
+<span style="color: #993300;">(solution 1)</span>
+<span style="color: #ff6600;">Sort s;</span>
+<span style="color: #333300;"><span style="color: #ff6600;">public void methodName(Sort quickSort){ this.s = quickSort;}</span>
+(solution 2) 
+<span style="color: #ff6600;">use <strong>@Primary</strong> on class level.
+</span>(solution 3)
+use @Qualifier annotation.
+
+</span></span></pre>
+<pre>lets say in application.properties file there is 
+<b>app.value.username = "Velma". </b>use<strong> 
+<span style="color: #ff0000;">@Value(${app.value.username}")</span></strong><span style="color: #333333;"> </span>
+<span style="color: #333333;">private String username;</span> 
+<span style="color: #ff0000;"><strong>Spring</strong> will inject</span> the username - Velma into username attribute.</pre>
+<h1>
+<strong>How to Configure Beans</strong> - how to put objects into application context.</h1>
+<p>Using annotations <span style="color: #ff6600;">@Controller, @Service, @Repository, @Configuration, @SpringBootApplication</span> on classes - spring creates objects(beans)  and put in to application context.</p>
+<pre><span style="color: #ff6600;"><strong>"If we don't want to create beans using annotations or 
+<span style="color: #333333;">if we don't have source code to annotate</span> then we should/ can
+ create a configuration class." <span style="color: #333333;">for example</span>
+
+<span style="color: #333333;">@Configuration</span>
+public class RestConfig{
+<span style="color: #333333;">@Bean</span>
+public Sort <span style="color: #333333;">quickSort</span>(){
+return new QuickSort(); - lets say value = 10001
+}
+<span style="color: #333333;">@Bean</span>
+public Sort <span style="color: #333333;">bubbleSort</span>(){
+</strong></span><strong>quicksort(); value is also 10001</strong><span style="color: #ff6600;"><strong>
+return new BubbleSort();
+}
+
+</strong></span><strong>NOTE:</strong><span style="color: #ff6600;"><strong> "Return value of bean in configuration class is cache", 
+where as for others like component it is not cached value is
+different for Component classes.</strong></span></pre>
+
+
+<footer>
+    <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

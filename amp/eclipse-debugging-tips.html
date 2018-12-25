@@ -1,0 +1,219 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Eclipse Debugging Tips</title>
+    <link rel="canonical" href="https://vsrkreddy.github.io/eclipse-debugging-tips/" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        .header-post {
+        background-color: rgb(0, 95, 151);
+        min-height: 23.25rem;
+        width: 100%;
+        }
+        .header-post .content {
+        width: 95%;
+        text-align: center;
+        padding-top: 8.75rem;
+        padding-right: 0px;
+        padding-bottom: 4.125rem;
+        padding-left: 0px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        max-width: 50rem;
+        }
+        .header-post .date {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1rem;
+        }
+        .header-post h1, .header-post .subtitle, .header-post .date {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        }
+        h1 {
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-right: 0px;
+        margin-bottom: 0.67em;
+        margin-left: 0px;
+        }
+        h1, h2, h3, h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        }
+        .header-post h1 {
+        font-size: 1.875rem;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        text-shadow: rgb(0, 76, 121) 3px 3px;
+        }
+        .header-post .subtitle {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem;
+        }
+        .header-post a, .header-post p {
+        color: rgb(255, 255, 255);
+        text-decoration-line: none;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.125rem;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block;
+        }
+        figure {
+        margin-top: 1em;
+        margin-right: 40px;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        }
+        .highlight {
+        margin-top: 1.25rem;
+        margin-right: 0px;
+        margin-bottom: 1.25rem;
+        margin-left: 0px;
+        }
+        pre {
+        overflow-x: auto;
+        overflow-y: auto;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(34, 34, 34);
+        width: 100%;
+        padding-top: 1.25rem;
+        padding-right: 0px;
+        padding-bottom: 1.25rem;
+        padding-left: 0px;
+        color: rgb(255, 255, 255);
+        margin-top: 1.875rem;
+        margin-right: 0px;
+        margin-bottom: 1.875rem;
+        margin-left: 0px;
+        font-size: 0.875rem;
+        }
+        code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        }
+        pre code {
+        width: auto;
+        max-width: 50rem;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 1.25rem;
+        padding-bottom: 0px;
+        padding-left: 1.25rem;
+        }
+        pre code::after {
+        clear: both;
+        }
+        pre span {
+        line-height: 1.5rem;
+        font-family: Monaco, Consolas, Menlo, monospace;
+        }
+        .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+        color: rgb(117, 113, 94);
+        }
+        .highlight .m, .highlight .n, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .py, .highlight .nv, .highlight .w, .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
+        color: rgb(164, 208, 67);
+        }
+        .highlight .o, .highlight .p {
+        color: rgb(247, 247, 242);
+        }
+        .highlight .ld, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+        color: rgb(230, 219, 116);
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+<header class="header-post" role="banner">
+        <div class="content" style="transform: translateY(0px); opacity: 1;">
+            
+                <time itemprop="datePublished" datetime="2018-11-18 06:41:51 -0500" class="date">2018-11-18 06:41:51 -0500 - velma</time>
+            
+            <h1 class="post-title" itemprop="name">Eclipse Debugging Tips</h1>
+            <p itemprop="description" class="subtitle"></p>
+        </div>
+</header>
+<p><strong>Run Java program in debug mode </strong></p>
+<p>What is <strong>Debugging</strong> -to find and fix bugs in software</p>
+<p><strong>breakpoint</strong> - a pausing point in a program, put in place to find and fix the bug. (double click on margin line where you want to put break-point, to remove double click on break-point ).</p>
+<p>We will have <strong>breakpoint</strong> view and <strong>variable</strong> view ( windows&gt;show view)</p>
+<h1><strong>"IMPORTANT COMMANDS"</strong></h1>
+<ol>
+<li style="text-align: left;">
+<blockquote><p><strong>Resume</strong> - F8 (GO HEAD pause at next breakpoint if any).</p></blockquote>
+</li>
+<li style="text-align: left;">
+<blockquote><p><strong>Terminate</strong> - Cntrl + F2 or stop button.</p></blockquote>
+</li>
+<li style="text-align: left;">
+<blockquote><p><strong>Step Over</strong> - F6 ( if breakpoint is at line 11, when you run the java application in debug mode it is paused at line 11. So when you press F6 line 11 is executed and the control is given to next line ie; line 12).</p></blockquote>
+</li>
+<li style="text-align: left;">
+<blockquote>
+<p><strong>Step Into</strong> - F5 (go into Method Invocation).</p>
+<pre>step into selection - if we have like 
+Util.Method().getSomeMethod().get(0); 
+and if we press f5 we will go to Method(), 
+what if we want to go to get(0) so select get(0) and 
+press Cntrl+F5.</pre>
+</blockquote>
+</li>
+<li style="text-align: left;">
+<blockquote><p><strong>Step Return</strong> - F7 (now i went inside a method invocation and want to come back to the place i was use step return which does opposite of Step Into).</p></blockquote>
+<p><em>"you can skill all breakpoints, remove all breakpoints in the options from breakpoint view".</em></p>
+<blockquote>
+<p><strong>"HELPFUL COMMANDS"</strong></p>
+<p><strong>Run into Line</strong> - go to that line without placing breakpoint ( Cntrl + R).</p>
+<p><strong>Inspect</strong> - Cntrl + Shift + I - inspect the values.</p>
+<p><strong>Execute</strong> - executes the selected expression ( Cntrl + U)</p>
+<p><strong>Watch</strong> - using watch we can create custom expressions and evaluate( if we have i and j we can see i+j, i-j, i*j, etc)</p>
+<p><strong>Show Logical Structures button</strong> -useful while debugging collection objects.</p>
+<p>"We can also changing Variable values during debugging".</p>
+<p><strong>Display View</strong> - see what code is doing. copy the code and put it in display view and execute.</p>
+<pre>if there s like Util.listMethod().getsubMethod().get(0); 
+and you want the size of listMethod() then use display view; 
+copy Util.listMethod().size() and execute.</pre>
+<p><strong>Detail Formatter</strong> - if we get the value in hexa; if we want it to be more readable. right click and select detail formatter.</p>
+<p><strong>Conditional Breakpoint</strong> - hit the break point if the value is something also hitcount is useful in cases of iteration.</p>
+<p><strong>Exception Breakpoint</strong> - if there is exception pause the program ( in breakpoint view options)</p>
+<p> </p>
+<p> </p>
+</blockquote>
+</li>
+</ol>
+<p> </p>
+
+
+<footer>
+    <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
