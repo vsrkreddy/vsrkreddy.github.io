@@ -3,18 +3,18 @@
   <channel>
     <title>Mr Velma - Blogs</title>
     <description>A blog about lorem ipsum dolor sit amet</description>
-    <link>https://vsrkreddy.github.io/</link>
-    <atom:link href="https://vsrkreddy.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Dec 2018 16:46:28 -0500</pubDate>
-    <lastBuildDate>Tue, 25 Dec 2018 16:46:28 -0500</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 25 Dec 2018 16:58:04 -0500</pubDate>
+    <lastBuildDate>Tue, 25 Dec 2018 16:58:04 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Spring Dependency Injection</title>
         <description>&lt;p&gt;Where DI comes into play - For example, now in sort algorithm we are using BubbleSort, and if we want to change to QuickSort it can be done with very little code change in spring framework.&lt;/p&gt; &lt;p&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;When you annotate (@Configuration, @Component, @Controller, @RestController etc..)the classes in spring it creates the beans and stored in application context. Using @Autowired, spring injects references of the objects in the class with @Autowired annotation. &quot;&lt;/span&gt;&lt;/p&gt; &lt;p&gt;if BubbleSort &lt;strong&gt;implements&lt;/strong&gt; Sort, QuickSort &lt;b&gt;implements &lt;/b&gt;Sort and we have used&lt;/p&gt; &lt;pre&gt;&lt;span style=&quot;color: #333300;&quot;&gt;@Autowired&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;span style=&quot;color: #333300;&quot;&gt;Sort s;&lt;/span&gt; then spring doesn't know which bean to inject then...</description>
         <pubDate>Tue, 20 Nov 2018 01:08:18 -0500</pubDate>
-        <link>https://vsrkreddy.github.io/spring-dependency-injection/</link>
-        <guid isPermaLink="true">https://vsrkreddy.github.io/spring-dependency-injection/</guid>
+        <link>http://localhost:4000/spring-dependency-injection/</link>
+        <guid isPermaLink="true">http://localhost:4000/spring-dependency-injection/</guid>
         
         
       </item>
@@ -23,8 +23,8 @@
         <title>Eclipse and Maven Overview</title>
         <description>&lt;h1&gt;&lt;strong&gt;Eclipse Keyboard Shortcut&lt;/strong&gt;&lt;/h1&gt; &lt;ol&gt; &lt;li&gt;&lt;strong&gt;Import a class - cntrl + space&lt;/strong&gt; (gives suggestion of available classes if multiple/ predefined template).&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Suggest Name - cntrl + 1&lt;/strong&gt; ( gives you suggestions for names).&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Search - Cntrl + H&lt;/strong&gt; ( file searches, java search , git search, can use wildcards using *).&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Organise imports - Cntrl + Shift + O&lt;/strong&gt; ( imports all necessary packages/class)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Search Resources - Cntrl + Shift + R/T&lt;/strong&gt; ( search for resources like classes)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;F3 - open declaration&lt;/strong&gt; ( opens the code of the class/method)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;F4 - Type HIerarchy&lt;/strong&gt; (for example see what Hashmap inherits ).&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Opens...</description>
         <pubDate>Tue, 20 Nov 2018 00:44:07 -0500</pubDate>
-        <link>https://vsrkreddy.github.io/eclipse-and-maven-overview/</link>
-        <guid isPermaLink="true">https://vsrkreddy.github.io/eclipse-and-maven-overview/</guid>
+        <link>http://localhost:4000/eclipse-and-maven-overview/</link>
+        <guid isPermaLink="true">http://localhost:4000/eclipse-and-maven-overview/</guid>
         
         
       </item>
@@ -33,8 +33,8 @@
         <title>JPA Concepts</title>
         <description>&lt;p&gt;&lt;strong&gt;JPA - Java Persistance API.&lt;/strong&gt; we want to take java objects data and store it in DB (tables).&lt;/p&gt; &lt;p&gt;JPA provides a way of mapping from POJO to the database tables. we can use SQL statements/ Criteria API, JPQL to query the database.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Important Annotations&lt;/strong&gt; - @Entity, @Table(name = &quot;tablename&quot;), @Id @GenerateValue, @Column, @OneToOne, @OneToMany, @ManyToMany.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Useful Notes:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt;&lt;strong&gt;JPA&lt;/strong&gt; is an interface/specification&lt;strong&gt; - Hibernate(ORM tool) is an implementation of interface.&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;EntityManager&lt;/strong&gt; is used to manage all the Entities. The EntityManager API is used to access a database in a particular unit of work. &lt;strong&gt;It is used to create and remove persistent entity instances&lt;/strong&gt;,...</description>
         <pubDate>Mon, 19 Nov 2018 21:28:50 -0500</pubDate>
-        <link>https://vsrkreddy.github.io/data-jpa-concepts/</link>
-        <guid isPermaLink="true">https://vsrkreddy.github.io/data-jpa-concepts/</guid>
+        <link>http://localhost:4000/data-jpa-concepts/</link>
+        <guid isPermaLink="true">http://localhost:4000/data-jpa-concepts/</guid>
         
         
       </item>
@@ -43,8 +43,8 @@
         <title>RESTful Web Services SpringBoot</title>
         <description>&lt;p&gt;&lt;strong&gt;Create a RESTful web services using spring boot.&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt;go to SpringInitilizr to generate a spring boot maven project with following dependencies - web, devtools, jpa, h2, actuator etc.(groupid is like the name of package structure you want , artifact_id is the name of the project you want).&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;http://35.229.62.76/wp-content/uploads/2018/11/RestfulServicesProject.zip&quot;&gt;ZIP of RestfulServicesProject&lt;/a&gt;&lt;/li&gt; &lt;li&gt;Unzip and import in preferred IDE.&lt;/li&gt; &lt;li&gt;Generally CRUD operations are mostly used. CRUD stands for Create Read Update Delete. Operations are  like create user (POST), retrieve user (GET), update user (PUT), Delete User (DELETE).&lt;/li&gt; &lt;li&gt;Uri's examples, /users, /users/{id}, /users/posts/1.&lt;/li&gt; &lt;li&gt;Use annotations like @Controller (/@RestController), @RequestMapping(it will have the...</description>
         <pubDate>Mon, 19 Nov 2018 19:59:13 -0500</pubDate>
-        <link>https://vsrkreddy.github.io/restful-web-services-springboot/</link>
-        <guid isPermaLink="true">https://vsrkreddy.github.io/restful-web-services-springboot/</guid>
+        <link>http://localhost:4000/restful-web-services-springboot/</link>
+        <guid isPermaLink="true">http://localhost:4000/restful-web-services-springboot/</guid>
         
         
       </item>
@@ -53,8 +53,8 @@
         <title>Eclipse Debugging Tips</title>
         <description>&lt;p&gt;&lt;strong&gt;Run Java program in debug mode &lt;/strong&gt;&lt;/p&gt; &lt;p&gt;What is &lt;strong&gt;Debugging&lt;/strong&gt; -to find and fix bugs in software&lt;/p&gt; &lt;p&gt;&lt;strong&gt;breakpoint&lt;/strong&gt; - a pausing point in a program, put in place to find and fix the bug. (double click on margin line where you want to put break-point, to remove double click on break-point ).&lt;/p&gt; &lt;p&gt;We will have &lt;strong&gt;breakpoint&lt;/strong&gt; view and &lt;strong&gt;variable&lt;/strong&gt; view ( windows&amp;gt;show view)&lt;/p&gt; &lt;h1&gt;&lt;strong&gt;&quot;IMPORTANT COMMANDS&quot;&lt;/strong&gt;&lt;/h1&gt; &lt;ol&gt; &lt;li style=&quot;text-align: left;&quot;&gt; &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Resume&lt;/strong&gt; - F8 (GO HEAD pause at next breakpoint if any).&lt;/p&gt;&lt;/blockquote&gt; &lt;/li&gt; &lt;li style=&quot;text-align: left;&quot;&gt; &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Terminate&lt;/strong&gt; - Cntrl + F2 or stop button.&lt;/p&gt;&lt;/blockquote&gt; &lt;/li&gt; &lt;li style=&quot;text-align: left;&quot;&gt; &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Step Over&lt;/strong&gt; - F6...</description>
         <pubDate>Sun, 18 Nov 2018 06:41:51 -0500</pubDate>
-        <link>https://vsrkreddy.github.io/eclipse-debugging-tips/</link>
-        <guid isPermaLink="true">https://vsrkreddy.github.io/eclipse-debugging-tips/</guid>
+        <link>http://localhost:4000/eclipse-debugging-tips/</link>
+        <guid isPermaLink="true">http://localhost:4000/eclipse-debugging-tips/</guid>
         
         
       </item>
@@ -63,8 +63,8 @@
         <title>SOAP WS with Spring boot</title>
         <description>&lt;p&gt;Create a sample project using &lt;a href=&quot;https://start.spring.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SpringInitializr&lt;/a&gt; choose web services, jpa, h2(in memory db) dependencies and generate the project. Unzip it and import it to preferred IDE.&lt;/p&gt; &lt;p&gt;Spring 'webservices' provides &lt;strong&gt;contract first approach&lt;/strong&gt; in developing web services, it means you will define the structure of request and response.&lt;/p&gt; &lt;ol&gt; &lt;li&gt;create a folder and put in the request XML and response XML ( request may contain like get the course with id =1 ,  may have like id, name and details).      &amp;lt;CourseRequest xmlns =&quot;http://examples.com/courses&quot; xsi:schemaLocation = &quot;{namespace} { location(sample)}&quot; xmlns:xsi= &quot;http://www.w3.org/2001/XMLSchema-instance&quot;&amp;gt;&amp;lt;id&amp;gt;1&amp;lt;/id&amp;gt;&amp;lt;/CourseRequest&amp;gt; and similar structure for response with id...</description>
         <pubDate>Sun, 18 Nov 2018 06:38:39 -0500</pubDate>
-        <link>https://vsrkreddy.github.io/soap-ws-with-spring-boot/</link>
-        <guid isPermaLink="true">https://vsrkreddy.github.io/soap-ws-with-spring-boot/</guid>
+        <link>http://localhost:4000/soap-ws-with-spring-boot/</link>
+        <guid isPermaLink="true">http://localhost:4000/soap-ws-with-spring-boot/</guid>
         
         
       </item>
@@ -73,8 +73,8 @@
         <title>Any Starter has dependency on &quot;spring-boot&quot;</title>
         <description>&lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;ol&gt; &lt;li&gt;&lt;strong&gt;spring-boot-starter-web&lt;/strong&gt; - preferred for Web Applications and &lt;strong&gt;&lt;em&gt;Rest web services&lt;/em&gt;&lt;/strong&gt;. &lt;ul&gt; &lt;li&gt;contains dependencies - &lt;em&gt;spring-boot-starter-tomcat, spring-web, spring-webmvc, hibernate-validator, spring-boot-starter-json so on..&lt;/em&gt;&lt;/li&gt; &lt;li&gt;These dependencies are automatically provided.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;strong&gt;spring-boot-starter-test&lt;/strong&gt; - testing frameworks &lt;ul&gt; &lt;li&gt;junit, assertj, Mockito etc..&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;strong&gt;spring-boot-starter-jpa&lt;/strong&gt; - for Databases &lt;ul&gt; &lt;li&gt;hibernate-core, hibernate-jpa, jpa, orm, etc..&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;strong&gt;spring-boot-starter-web-services - &lt;/strong&gt;SOAP WebServices&lt;/li&gt; &lt;li&gt;&lt;strong&gt;spring-boot-starter-data- rest - &lt;/strong&gt;Expose simple REST Services using spring data REST.&lt;/li&gt; &lt;li&gt;&lt;strong&gt;spring-boot-starter-security - &lt;/strong&gt;Authentication and Authorization using Spring Security.&lt;/li&gt; &lt;li&gt;&lt;strong&gt;spring-boot-starter-jetty&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;spring-boot-starter-log4j2&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;spring-boot-starter-actuator&lt;/strong&gt; &lt;ul&gt; &lt;li&gt;brings in lot of monitoring, exposes lot of rest services.(get hal-browser dependency if needed.)&lt;/li&gt; &lt;li&gt;launch actuator - localhost:8080/actuator&lt;/li&gt; &lt;li&gt;to get more info from...</description>
         <pubDate>Sun, 18 Nov 2018 06:02:59 -0500</pubDate>
-        <link>https://vsrkreddy.github.io/any-starter-has-dependency-on-spring-boot/</link>
-        <guid isPermaLink="true">https://vsrkreddy.github.io/any-starter-has-dependency-on-spring-boot/</guid>
+        <link>http://localhost:4000/any-starter-has-dependency-on-spring-boot/</link>
+        <guid isPermaLink="true">http://localhost:4000/any-starter-has-dependency-on-spring-boot/</guid>
         
         
       </item>
@@ -83,8 +83,8 @@
         <title>WebServices</title>
         <description>&lt;p&gt;&lt;strong&gt;W3C &lt;/strong&gt;&lt;b&gt;DEFINITION&lt;/b&gt; - s/w system designed to support inter operable machine to machine interaction over a network.&lt;/p&gt; &lt;p&gt;Three things for it to be a web service.&lt;/p&gt; &lt;p&gt;1. Application to application communication.&lt;/p&gt; &lt;p&gt;&lt;span style=&quot;font-size: 1rem;&quot;&gt;2. Communication over network.&lt;/span&gt;&lt;/p&gt; &lt;p&gt;3. Should be inter operable -  irrespective of tech stack.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;How Data exchange takes place between applications?&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Request (give me name of the person with id =1) and Response( Take the person Details).  Request and response format should also be supported by the applications(platform independent), popular formats are XML and Json.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Service Definition&lt;/strong&gt; is where application will know the request/response format. Request structure, Response Structure,...</description>
         <pubDate>Sun, 18 Nov 2018 03:31:54 -0500</pubDate>
-        <link>https://vsrkreddy.github.io/webservices/</link>
-        <guid isPermaLink="true">https://vsrkreddy.github.io/webservices/</guid>
+        <link>http://localhost:4000/webservices/</link>
+        <guid isPermaLink="true">http://localhost:4000/webservices/</guid>
         
         
       </item>
@@ -93,8 +93,8 @@
         <title>Spring Boot - Quick Overview</title>
         <description>&lt;h2 id=&quot;goals&quot;&gt;Goals&lt;/h2&gt; &lt;ol&gt; &lt;li&gt;Enable building production ready applications quickly.&lt;/li&gt; &lt;li&gt;Provide common non - functionality features like embedded servers (tomcat, jetty), metrics, health checks, external configurations&lt;/li&gt; &lt;/ol&gt; &lt;h2 id=&quot;features&quot;&gt;Features:&lt;/h2&gt; &lt;ol&gt; &lt;li&gt;Quickly create spring applications with auto configurations. Quick Starters like web logging etc..&lt;/li&gt; &lt;li&gt;Embedded Server  - package tomcat in application jar and deploy the application.&lt;/li&gt; &lt;li&gt;Monitoring - spring boot actuator - how many time services is called, failed etc.&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;Before spring boot we have to decide all the dependencies and the versions as well problem is there might be a comparability issues. There would be lot of configurations like dispatcher...</description>
         <pubDate>Thu, 11 Oct 2018 02:52:39 -0400</pubDate>
-        <link>https://vsrkreddy.github.io/springboot_quickstart/</link>
-        <guid isPermaLink="true">https://vsrkreddy.github.io/springboot_quickstart/</guid>
+        <link>http://localhost:4000/springboot_quickstart/</link>
+        <guid isPermaLink="true">http://localhost:4000/springboot_quickstart/</guid>
         
         
       </item>

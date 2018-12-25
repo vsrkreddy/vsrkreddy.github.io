@@ -2,144 +2,144 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
-            <loc>https://vsrkreddy.github.io/pages/2018-02-10-home-page/</loc>
+            <loc>http://localhost:4000/pages/2018-02-10-home-page/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/pages/2018-02-10-sample-page/</loc>
+            <loc>http://localhost:4000/pages/2018-02-10-sample-page/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/about/index.html</loc>
+            <loc>http://localhost:4000/about/index.html</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/category/css/</loc>
+            <loc>http://localhost:4000/category/css/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/category/dev/</loc>
+            <loc>http://localhost:4000/category/dev/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/feed.xml</loc>
+            <loc>http://localhost:4000/feed.xml</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/category/html/</loc>
+            <loc>http://localhost:4000/category/html/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/</loc>
+            <loc>http://localhost:4000/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/category/jekyll/</loc>
+            <loc>http://localhost:4000/category/jekyll/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/category/js/</loc>
+            <loc>http://localhost:4000/category/js/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/category/misc/</loc>
+            <loc>http://localhost:4000/category/misc/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/search.json</loc>
+            <loc>http://localhost:4000/search.json</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/series/index.html</loc>
+            <loc>http://localhost:4000/series/index.html</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/sitemap.xml</loc>
+            <loc>http://localhost:4000/sitemap.xml</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/category/svg/</loc>
+            <loc>http://localhost:4000/category/svg/</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/tags/index.html</loc>
+            <loc>http://localhost:4000/tags/index.html</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/redirects.json</loc>
+            <loc>http://localhost:4000/redirects.json</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/amp/springboot_quickstart</loc>
+            <loc>http://localhost:4000/amp/springboot_quickstart</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/amp/webservices</loc>
+            <loc>http://localhost:4000/amp/webservices</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/amp/any-starter-has-dependency-on-spring-boot</loc>
+            <loc>http://localhost:4000/amp/any-starter-has-dependency-on-spring-boot</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/amp/soap-ws-with-spring-boot</loc>
+            <loc>http://localhost:4000/amp/soap-ws-with-spring-boot</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/amp/eclipse-debugging-tips</loc>
+            <loc>http://localhost:4000/amp/eclipse-debugging-tips</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/amp/restful-web-services-springboot</loc>
+            <loc>http://localhost:4000/amp/restful-web-services-springboot</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/amp/data-jpa-concepts</loc>
+            <loc>http://localhost:4000/amp/data-jpa-concepts</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/amp/eclipse-and-maven-overview</loc>
+            <loc>http://localhost:4000/amp/eclipse-and-maven-overview</loc>
         </url>
     
         <url>
-            <loc>https://vsrkreddy.github.io/amp/spring-dependency-injection</loc>
+            <loc>http://localhost:4000/amp/spring-dependency-injection</loc>
         </url>
     
     
         <url>
-            <loc>https://vsrkreddy.github.io/spring-dependency-injection/</loc>
+            <loc>http://localhost:4000/spring-dependency-injection/</loc>
         </url>
   
         <url>
-            <loc>https://vsrkreddy.github.io/eclipse-and-maven-overview/</loc>
+            <loc>http://localhost:4000/eclipse-and-maven-overview/</loc>
         </url>
   
         <url>
-            <loc>https://vsrkreddy.github.io/data-jpa-concepts/</loc>
+            <loc>http://localhost:4000/data-jpa-concepts/</loc>
         </url>
   
         <url>
-            <loc>https://vsrkreddy.github.io/restful-web-services-springboot/</loc>
+            <loc>http://localhost:4000/restful-web-services-springboot/</loc>
         </url>
   
         <url>
-            <loc>https://vsrkreddy.github.io/eclipse-debugging-tips/</loc>
+            <loc>http://localhost:4000/eclipse-debugging-tips/</loc>
         </url>
   
         <url>
-            <loc>https://vsrkreddy.github.io/soap-ws-with-spring-boot/</loc>
+            <loc>http://localhost:4000/soap-ws-with-spring-boot/</loc>
         </url>
   
         <url>
-            <loc>https://vsrkreddy.github.io/any-starter-has-dependency-on-spring-boot/</loc>
+            <loc>http://localhost:4000/any-starter-has-dependency-on-spring-boot/</loc>
         </url>
   
         <url>
-            <loc>https://vsrkreddy.github.io/webservices/</loc>
+            <loc>http://localhost:4000/webservices/</loc>
         </url>
   
         <url>
-            <loc>https://vsrkreddy.github.io/springboot_quickstart/</loc>
+            <loc>http://localhost:4000/springboot_quickstart/</loc>
         </url>
   
 </urlset>
